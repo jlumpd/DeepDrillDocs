@@ -1,0 +1,666 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>一、数据预处理模块 &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '判断逻辑';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="问题一览" href="%E9%97%AE%E9%A2%98%E4%B8%80%E8%A7%88.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="%E5%8F%8C%E6%B6%B2%E9%9D%A2%E7%9B%91%E6%B5%8B%E4%B8%80%E4%BD%93%E5%8C%96%E6%A8%A1%E5%9D%97.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="%E5%8F%8C%E6%B6%B2%E9%9D%A2%E7%9B%91%E6%B5%8B%E4%B8%80%E4%BD%93%E5%8C%96%E6%A8%A1%E5%9D%97.html">
+                    双液面监测一体化模块
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0.html">项目概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E9%97%AE%E9%A2%98%E4%B8%80%E8%A7%88.html">问题一览</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">一、数据预处理模块</a></li>
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F判断逻辑.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/判断逻辑.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>一、数据预处理模块</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">一、数据预处理模块</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">（一）多级复合滤波</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">（二）传感器健康监测</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">二、主监控逻辑</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">（一）循环工况监控</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1. 总池体积监控</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">（二）起钻工况监控</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1. 总池体积监控</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">2. 时间关联监控</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">（三）下钻工况监控</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">1. 总池体积监控</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">2. 时间关联监控</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">三、单罐液面变化速率监控</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">（一）通用监控规则</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">（二）多罐协同判定</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">四、新增智能功能模块</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">（一）智能诊断与根因分析</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">（二）可视化与交互优化</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">（三）自适应学习模块</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">五、系统容错与运维支持</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">（一）全链路日志管理</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">（二）模拟演练模式</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><strong>液面高度监控系统逻辑说明</strong></p>
+<section id="id1">
+<h1>一、数据预处理模块<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="id2">
+<h2>（一）多级复合滤波<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>实时接收传感器传入的原始液面高度数据，计算新数据与当前系统记录值的绝对差值。</p>
+<p><strong>1.</strong> **初级滤波：**保留原有阈值滤波逻辑（Δ≤0.5%），过滤无效波动。</p>
+<p><strong>2.</strong> <strong>二级滤波</strong>：引入滑动窗口均值滤波（窗口大小可配置），对连续3个数据点计算均值，平滑瞬时噪声。</p>
+<p><strong>3.</strong> <strong>三级滤波</strong>：针对极端异常值（如数据突变超过10%），触发传感器健康检查，并临时切换至备用传感器数据。优化后，若单次数据突变超过10%，系统立即触发传感器健康检查流程，同时临时切换至备用传感器数据，保障数据的可靠性与连续性，避免因异常数据导致的错误判断。</p>
+</section>
+<section id="id3">
+<h2>（二）传感器健康监测<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p><strong>1.</strong> <strong>实时监测稳定性</strong>：若某传感器连续5次数据波动≤0.1%，标记为“疑似故障”，并启用冗余传感器数据交叉验证。优化后，当传感器连续5次波动≤0.1%时，系统将其标记为“低灵敏度”状态，随即启动冗余数据交叉验证机制，通过与冗余传感器数据对比，进一步确认当前传感器数据的准确性。</p>
+<p><strong>2.</strong> <strong>故障自动隔离</strong>：故障确认后，系统自动剔除该传感器数据，并通知维护人员。</p>
+</section>
+</section>
+<section id="id4">
+<h1>二、主监控逻辑<a class="headerlink" href="#id4" title="Link to this heading">#</a></h1>
+<section id="id5">
+<h2>（一）循环工况监控<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<section id="id6">
+<h3>1. 总池体积监控<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>**动态基准值计算：**采用移动时间窗口算法（时间窗口大小由系统界面输入，默认1分钟），计算窗口内总池体积的平均值作为动态基准值。优化后，采用加权移动平均算法计算动态基准值，在时间窗口内，赋予最近10秒数据60%的权重，强化对短期趋势的捕捉与响应能力，使基准值能更及时地反映液面的实时变化；同时依据实时采集的温度、压力数据，通过预先设定的补偿系数表对液面高度值进行修正，消除环境因素对液面高度测量的影响，提高测量精度。</p>
+<p>**设定动态阈值：**上限阈值为基准值×102%；下限阈值为基准值×98%。优化后，若连续10分钟液面稳定（波动&lt;1%），系统自动收紧阈值至基准值的±1%，提高监测的灵敏度；当液面波动加剧时，阈值则恢复至默认设置，平衡误报与漏报风险。</p>
+<p>**判定规则：**当前总池体积超过上限阈值时，触发“溢流”警报；低于下限阈值时，触发“漏失”警报；在阈值范围内波动时标记为“稳定”。</p>
+</section>
+</section>
+<section id="id7">
+<h2>（二）起钻工况监控<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<section id="id8">
+<h3>1. 总池体积监控<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p><strong>输入参数</strong>：理论体积变化量是根据起钻时钻具移除体积计算的理论液面下降量（ΔV理论）；允许偏差范围为ΔV理论×20%。优化后，结合泵速、钻具运动速度等参数，实时校准理论体积变化量（ΔV理论），使理论计算更加贴合实际工况，提升监控准确性。</p>
+<p>**计算与判定：**实时计算实际体积变化量（ΔV实际）与变化速率，若ΔV实际 &lt; ΔV理论 - 允许偏差 → 触发“漏失”警报（液面下降过快）；若ΔV实际 &gt; ΔV理论 + 允许偏差 → 触发“溢流”警报（液面下降不足或上升）。优化后，若连续3次实际体积变化量（ΔV实际）超出允许偏差范围，系统触发高优先级警报，提示操作人员及时处理潜在风险。</p>
+</section>
+<section id="id9">
+<h3>2. 时间关联监控<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>若到达计划起钻时间（T）后，体积减少量仍小于理论体积减少量，即ΔV实际（最终）&gt;ΔV理论,则系统判别为溢流。优化后，在计划时间T到达后，将监测时间延长至T+30秒，更全面地观察体积变化情况，避免因短暂波动导致的误判；当ΔV实际与ΔV理论差值&gt;5%时，触发“严重溢流”警报；差值≤5%时，触发“轻度溢流”警报，便于操作人员快速判断风险程度并采取相应措施。</p>
+</section>
+</section>
+<section id="id10">
+<h2>（三）下钻工况监控<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<section id="id11">
+<h3>1. 总池体积监控<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p><strong>输入参数</strong>：理论体积变化量是根据下钻时钻具插入体积计算的理论液面上升量（ΔV理论）；允许偏差范围为ΔV理论×20%。优化后，结合泵速、钻具运动速度等参数，实时校准理论体积变化量（ΔV理论），使理论计算更加贴合实际工况，提升监控准确性。</p>
+<p><strong>计算与判定</strong>：实时计算实际体积变化量（ΔV实际）与变化速率，若ΔV实际 &gt; ΔV理论 + 允许偏差 → 触发“溢流”警报（液面上升过快）；若ΔV实际 &lt; ΔV理论 - 允许偏差 → 触发“漏失”警报（液面上升不足或下降）。优化后，若连续3次实际体积变化量（ΔV实际）超出允许偏差范围，系统触发高优先级警报，提示操作人员及时处理潜在风险。</p>
+</section>
+<section id="id12">
+<h3>2. 时间关联监控<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<p>若到达计划起钻时间（T）后，体积增加量仍未到达理论体积增加量，即ΔV实际（最终）&lt;ΔV理论,则系统判别为漏失。优化后，在计划时间T到达后，将监测时间延长至T+30秒，更全面地观察体积变化情况，避免因短暂波动导致的误判；当ΔV实际与ΔV理论差值&gt;5%时，触发“严重漏失”警报；差值≤5%时，触发“轻度漏失”警报，便于操作人员快速判断风险程度并采取相应措施。</p>
+</section>
+</section>
+</section>
+<section id="id13">
+<h1>三、单罐液面变化速率监控<a class="headerlink" href="#id13" title="Link to this heading">#</a></h1>
+<section id="id14">
+<h2>（一）通用监控规则<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
+<p>实时计算每个泥浆罐的液面高度变化速率（单位：%/s），判定等级如下：</p>
+<p><strong>1.</strong> **稳定：**速率 &lt; 0.5%/s，仅记录数据；</p>
+<p><strong>2.</strong> <strong>稳定上升</strong>**/**<strong>下降</strong>：速率0.5%~2%/s；</p>
+<p><strong>3.</strong> <strong>快速上升</strong>**/****下降：**速率 &gt; 2%/s，触发警报；</p>
+<p>以上变化速率范围阈值可调整。优化后，运用线性回归算法，基于滑动窗口（5秒）数据预测未来5秒的液面高度变化速率。若预测值&gt;2%/s，系统提前触发预警，为操作人员争取更多处理时间。</p>
+</section>
+<section id="id15">
+<h2>（二）多罐协同判定<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
+<p>若同一时间内≥2个罐体触发“快速变化”警报，则升级为系统级溢流/漏失警报。优化后，实行分级响应机制，当2个罐体报警时，触发系统级警报并启动备用监测模块；当≥3个罐体报警时，触发紧急停机指令，关闭相关阀门，防止事故扩大；</p>
+</section>
+</section>
+<section id="id16">
+<h1>四、新增智能功能模块<a class="headerlink" href="#id16" title="Link to this heading">#</a></h1>
+<section id="id17">
+<h2>（一）智能诊断与根因分析<a class="headerlink" href="#id17" title="Link to this heading">#</a></h2>
+<p><strong>1.</strong> <strong>事件关联图谱</strong>：自动分析警报前后10分钟数据，标记关联异常参数（如泵压突降+液面上升）。</p>
+<p><strong>2.</strong> <strong>根因推荐库</strong>：基于历史案例，提供可能故障原因（如“钻井液加重”“传感器数据紊乱”）。</p>
+</section>
+<section id="id18">
+<h2>（二）可视化与交互优化<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
+<p><strong>1.</strong> <strong>液面分布图</strong>：实时展示各罐高度、变化趋势及报警状态。</p>
+<p><strong>2.</strong> <strong>警报历史分析</strong>：按时间段统计报警频率，辅助优化阈值配置。</p>
+</section>
+<section id="id19">
+<h2>（三）自适应学习模块<a class="headerlink" href="#id19" title="Link to this heading">#</a></h2>
+<p><strong>1.</strong> <strong>工况模式学习</strong>：通过历史数据训练，识别不同工况（如循环、起下钻）下的液面波动模式。</p>
+<p><strong>2.</strong> **参数自优化：**定期生成调整建议（如“建议起钻允许偏差至15%”）。</p>
+</section>
+</section>
+<section id="id20">
+<h1>五、系统容错与运维支持<a class="headerlink" href="#id20" title="Link to this heading">#</a></h1>
+<section id="id21">
+<h2>（一）全链路日志管理<a class="headerlink" href="#id21" title="Link to this heading">#</a></h2>
+<p>记录原始数据、滤波结果、判定过程及操作指令，支持按时间/事件类型回溯。</p>
+</section>
+<section id="id22">
+<h2>（二）模拟演练模式<a class="headerlink" href="#id22" title="Link to this heading">#</a></h2>
+<p>支持注入模拟数据（如快速漏失、传感器故障），验证系统响应逻辑。</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="%E9%97%AE%E9%A2%98%E4%B8%80%E8%A7%88.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">问题一览</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">一、数据预处理模块</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">（一）多级复合滤波</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">（二）传感器健康监测</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">二、主监控逻辑</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">（一）循环工况监控</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1. 总池体积监控</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">（二）起钻工况监控</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1. 总池体积监控</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">2. 时间关联监控</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">（三）下钻工况监控</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">1. 总池体积监控</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">2. 时间关联监控</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">三、单罐液面变化速率监控</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">（一）通用监控规则</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">（二）多罐协同判定</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">四、新增智能功能模块</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">（一）智能诊断与根因分析</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">（二）可视化与交互优化</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">（三）自适应学习模块</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">五、系统容错与运维支持</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">（一）全链路日志管理</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">（二）模拟演练模式</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
