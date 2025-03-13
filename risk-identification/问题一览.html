@@ -1,0 +1,1189 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>问题一览 &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '问题一览';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="项目概述" href="%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0.html">项目概述</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">问题一览</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F问题一览.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/问题一览.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>问题一览</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">说明：</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>后期改进计划（无明确日期）</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>关键问题说明</strong></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>问题一览<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>日期</p></th>
+<th class="head"><p>问题描述</p></th>
+<th class="head"><p>状态</p></th>
+<th class="head"><p>备注</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2024-12-10</p></td>
+<td><p>PPT日期</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-10</p></td>
+<td><p>PPT正文字体改为微软雅黑24号字，去掉粗体</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-10</p></td>
+<td><p>PPT钻井液性质预测部分截图问题（图片反向、数字尾数过长）</p></td>
+<td><p>完成</p></td>
+<td><p>需删除冗余图片</p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-10</p></td>
+<td><p>井筒压力部分术语修改（Constant/Variant→单一尺寸钻杆/组合尺寸钻杆）</p></td>
+<td><p>完成</p></td>
+<td><p>涉及PPT和软件修改</p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-10</p></td>
+<td><p>PPT中所有“上传”改为“导入”</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-10</p></td>
+<td><p>Type1和Type2改为已知入口压力和出口压力</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-10</p></td>
+<td><p>PPT第39页精度问题（代码+PPT）</p></td>
+<td><p>软件确认</p></td>
+<td><p>需代码调整</p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-10</p></td>
+<td><p>压力计算出现负值异常（PPT第41页）</p></td>
+<td><p>软件确认</p></td>
+<td><p>需更换数据或对比流变模式</p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-10</p></td>
+<td><p>波动压力计算需包含静液柱压力对比</p></td>
+<td><p>软件确认</p></td>
+<td><p>需软件修改</p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-10</p></td>
+<td><p>PPT第45页“环空”错字</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-10</p></td>
+<td><p>PPT第54页文字过多需简化</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-10</p></td>
+<td><p>PPT第56页“上传后”改为“导入”</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-10</p></td>
+<td><p>PPT第57页轮播图对比流量过小问题</p></td>
+<td><p>软件确认</p></td>
+<td><p>需检查源代码逻辑</p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-10</p></td>
+<td><p>PPT第58页压耗梯度对比图改为表格+实验数据</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-10</p></td>
+<td><p>软件中钻井液密度输入冗余问题</p></td>
+<td><p>完成</p></td>
+<td><p>需关联输入字段</p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-10</p></td>
+<td><p>流体性质界面“高温高压”改为“高温高压经验公式”</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-10</p></td>
+<td><p>摩阻扭矩实测值图表改为散点图</p></td>
+<td><p>未开始</p></td>
+<td><p>散点图与折线图同图表显示不易实现</p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-10</p></td>
+<td><p>摩阻扭矩计算与反演逻辑梳理</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-10</p></td>
+<td><p>摩阻扭矩界面增加反演结果输出框</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-10</p></td>
+<td><p>流型显示固定为层流、过渡流、湍流</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-10</p></td>
+<td><p>右侧菜单“绘图相关参数”改为“计算相关参数”</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-10</p></td>
+<td><p>压力计算中“测试温度/压力”改为“大气温度/气压”</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-10</p></td>
+<td><p>所有压力单位Pa改为MPa</p></td>
+<td><p>完成</p></td>
+<td><p>需保持内部计算单位一致性</p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-10</p></td>
+<td><p>所有体积流量单位改为L/s</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-10</p></td>
+<td><p>密度组分油水比输入说明不清晰</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-10</p></td>
+<td><p>密度组分温度显示异常（负值）</p></td>
+<td><p>完成</p></td>
+<td><p>需修复显示逻辑</p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-10</p></td>
+<td><p>结果UI布局优化（加长、调整文字大小）</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-10</p></td>
+<td><p>计算过程中增加提示</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-10</p></td>
+<td><p>温度场计算未支持组合钻具场景</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-10</p></td>
+<td><p>删除首页冗余模块</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-10</p></td>
+<td><p>折线图数据精度显示优化</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-10</p></td>
+<td><p>工况识别曲线需突出提示</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-10</p></td>
+<td><p>首页模块布局梳理</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-18</p></td>
+<td><p>系统闪退测试（流体参数计算、高温高压预测保存）</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-18</p></td>
+<td><p>侧边栏移除“流体和地层”</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-18</p></td>
+<td><p>高温高压预测模型公式位置调整</p></td>
+<td><p>完成</p></td>
+<td><p>需动态显示公式</p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-18</p></td>
+<td><p>高温高压预测模型显示导入数据</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-18</p></td>
+<td><p>流体参数计算和高温高压预测增加数据回放/清空功能</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-18</p></td>
+<td><p>软件分辨率自适应问题</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-18</p></td>
+<td><p>输入缺失时提示功能</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-18</p></td>
+<td><p>温度计算数据列合并</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-18</p></td>
+<td><p>折线图数据点显示问题</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-18</p></td>
+<td><p>表头固定功能</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-18</p></td>
+<td><p>井眼清洁功能调整</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-18</p></td>
+<td><p>侧边栏“裸眼段实测井径”改为“实测井径”</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-18</p></td>
+<td><p>删除重力加速度输入</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-18</p></td>
+<td><p>钻井液排量统一为体积排量（L/s）</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-18</p></td>
+<td><p>单位大小写问题（如mPa）</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-18</p></td>
+<td><p>压力计算去除循环次数输入</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-18</p></td>
+<td><p>压力计算总时间单位改为小时</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-18</p></td>
+<td><p>风险诊断模型分级选择（工况→模型）</p></td>
+<td><p>取消</p></td>
+<td><p>采用其它方式实现</p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-20</p></td>
+<td><p>表格/文字增加框线与颜色标识</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-20</p></td>
+<td><p>井筒温度图增加时间维度</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-20</p></td>
+<td><p>高温高压数据导入逻辑优化</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-20</p></td>
+<td><p>Uploading显示异常</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-20</p></td>
+<td><p>高温高压六速数据导入绘图功能</p></td>
+<td><p>未开始</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-20</p></td>
+<td><p>离群值数据标注</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-20</p></td>
+<td><p>压力计算井筒尺寸取自侧边栏</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-20</p></td>
+<td><p>摩阻扭矩去除计算间距/误差输入</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-20</p></td>
+<td><p>密度组分界面闪退问题</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-25</p></td>
+<td><p>溢流、卡钻类型诊断不完善</p></td>
+<td><p>取消</p></td>
+<td><p>与问题14、15重复</p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-25</p></td>
+<td><p>数据导入次数过多优化</p></td>
+<td><p>完成</p></td>
+<td><p>需简化侧边栏配置</p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-25</p></td>
+<td><p>风险诊断区分静态/动态条件</p></td>
+<td><p>完成</p></td>
+<td><p>需接入录井数据</p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-25</p></td>
+<td><p>模型嵌入控压软件测试</p></td>
+<td><p>低优先级</p></td>
+<td><p>需控压软件配合</p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-25</p></td>
+<td><p>参考成熟软件逻辑优化</p></td>
+<td><p>中优先级</p></td>
+<td><p>需对比WellPlan等软件</p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-25</p></td>
+<td><p>双液面监控融入风险诊断</p></td>
+<td><p>低优先级</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-25</p></td>
+<td><p>软件依赖项瘦身</p></td>
+<td><p>高优先级</p></td>
+<td><p>需减少数据库/模型体积</p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-25</p></td>
+<td><p>钻具细节尺寸优化</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-25</p></td>
+<td><p>高温高压模块定制化设计</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-25</p></td>
+<td><p>溢流类型诊断（欠平衡/置换气侵）</p></td>
+<td><p>完成</p></td>
+<td><p>需结合物理模型与数据验证</p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-25</p></td>
+<td><p>卡钻类型诊断（沉砂/坍塌/压差）</p></td>
+<td><p>完成</p></td>
+<td><p>需关联岩屑浓度与压力数据</p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-25</p></td>
+<td><p>漏失类型诊断（漏速/裂缝类型）</p></td>
+<td><p>完成</p></td>
+<td><p>需对比入口/出口流量</p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-25</p></td>
+<td><p>温度场模型更新（排量过大导致井底温度异常）</p></td>
+<td><p>完成</p></td>
+<td><p>付工提供新模型</p></td>
+</tr>
+<tr class="row-odd"><td><p>2024-12-25</p></td>
+<td><p>温度场恢复地层时间曲线</p></td>
+<td><p>完成</p></td>
+<td><p>付工提供新模型</p></td>
+</tr>
+<tr class="row-even"><td><p>2024-12-25</p></td>
+<td><p>不同时间温度场对比显示</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2025-01-28</p></td>
+<td><p>高温高压模块增加密度输入</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2025-01-28</p></td>
+<td><p>密度组分温度单位统一</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2025-01-28</p></td>
+<td><p>颜色刻度范围优化</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2025-01-28</p></td>
+<td><p>添加剂输入限制（如NaCl/KCl）</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2025-01-28</p></td>
+<td><p>流变模式显示异常</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2025-01-28</p></td>
+<td><p>井下参数菜单命名优化</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2025-01-28</p></td>
+<td><p>目标温度/压力输入说明</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2025-01-28</p></td>
+<td><p>油水比注释补充</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2025-01-28</p></td>
+<td><p>密度组分温度/压力单位补充</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2025-01-28</p></td>
+<td><p>管柱轴向力更名为大钩载荷</p></td>
+<td><p>完成</p></td>
+<td><p>需确认单位一致性</p></td>
+</tr>
+<tr class="row-odd"><td><p>2025-01-28</p></td>
+<td><p>管柱扭矩更名为地面扭矩</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2025-01-28</p></td>
+<td><p>图形文字对齐优化</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2025-01-28</p></td>
+<td><p>计算值/测量值分列显示</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2025-01-28</p></td>
+<td><p>Tooltip单位与小数位优化</p></td>
+<td><p>完成</p></td>
+<td><p>需全局检查</p></td>
+</tr>
+<tr class="row-odd"><td><p>2025-01-28</p></td>
+<td><p>图表标题与坐标轴重叠问题</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2025-02-17</p></td>
+<td><p>复杂工况阈值配置</p></td>
+<td><p>完成</p></td>
+<td><p>需在参数页面增加默认值</p></td>
+</tr>
+<tr class="row-odd"><td><p>2025-02-17</p></td>
+<td><p>测试数据统一性验证</p></td>
+<td><p>进行中</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2025-02-18</p></td>
+<td><p>风险诊断实时数据对码问题</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2025-02-18</p></td>
+<td><p>风险诊断折线图显示异常</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2025-02-18</p></td>
+<td><p>工况识别算法速度优化</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2025-02-18</p></td>
+<td><p>工况识别界面增加钻井参数显示</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2025-02-18</p></td>
+<td><p>摩阻扭矩界面增加卡钻判别</p></td>
+<td><p>未开始</p></td>
+<td><p>报告中未给出判别方式</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2025-02-23</strong></p></td>
+<td><p>井筒温度计算需支持三种算法切换（算法1、算法2、算法3），并比较结果</p></td>
+<td><p>完成</p></td>
+<td><p>需验证不同算法输出差异</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2025-02-23</strong></p></td>
+<td><p>高温高压性质预测界面左侧参数布局调整（分组框线留白、功能标题添加）</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2025-02-23</strong></p></td>
+<td><p>密度组分计算结果与流体参数结合（类似高温高压模型）</p></td>
+<td><p>完成</p></td>
+<td><p>需数据联动逻辑开发</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2025-02-23</strong></p></td>
+<td><p>所有表格文字居中显示</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2025-02-23</strong></p></td>
+<td><p>井眼清洁界面增加岩屑等效直径和岩屑密度参数（移至左边栏）</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2025-02-23</strong></p></td>
+<td><p>井眼清洁流型切换时赫巴流体需关联屈服值参数</p></td>
+<td><p>进行中</p></td>
+<td><p>需流变模型逻辑调整</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2025-02-23</strong></p></td>
+<td><p>工况识别界面字体加粗、识别结果区域增加背景色</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2025-02-24</strong></p></td>
+<td><p>工况识别手动识别数据导入功能开发（用于与智能识别结果对比）</p></td>
+<td><p>完成</p></td>
+<td><p>需支持人工数据与算法结果同图对比</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2025-02-24</strong></p></td>
+<td><p>风险诊断模块增加二级分类诊断（通过地层压力与实时数据对比）</p></td>
+<td><p>完成</p></td>
+<td><p>需侧边栏地层压力数据接入</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2025-02-24</strong></p></td>
+<td><p>摩阻扭矩界面数据导入逻辑优化（剔除井轨迹和钻具数据，改为从左边栏读取）</p></td>
+<td><p>未开始</p></td>
+<td><p>需重构数据输入逻辑</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2025-02-24</strong></p></td>
+<td><p>压力计算界面UI调整（注替压力模块隐藏左边栏数据）</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2025-02-24</strong></p></td>
+<td><p>井筒温度计算存在显示Bug（部分温度曲线异常）</p></td>
+<td><p>完成</p></td>
+<td><p>需排查算法或数据输入问题</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2025-02-25</strong></p></td>
+<td><p>摩阻扭矩反演结果输出框增加Loading提示，反演期间文本框禁用</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2025-02-25</strong></p></td>
+<td><p>摩阻扭矩界面折线图显示不全（Y轴范围自适应问题）</p></td>
+<td><p>进行中</p></td>
+<td><p>需优化图表缩放逻辑</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2025-02-25</strong></p></td>
+<td><p>所有功能画面在1080*1920分辨率下占屏80%以上</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2025-02-27</strong></p></td>
+<td><p>高温高压性质预测模型名称和流型参数输入空格过多</p></td>
+<td><p>完成</p></td>
+<td><p>优化输入框格式</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2025-02-27</strong></p></td>
+<td><p>密度组分计算结果删除功能缺失</p></td>
+<td><p>进行中</p></td>
+<td><p>需增加结果清除按钮</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2025-02-27</strong></p></td>
+<td><p>复杂工况诊断阈值参数单位补充（如漏速单位）</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2025-03-03</strong></p></td>
+<td><p>演示流程梳理：重点展示响应式布局、左边栏输入、动态数据接入等功能</p></td>
+<td><p>进行中</p></td>
+<td><p>需制定详细演示脚本</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2025-03-07</strong></p></td>
+<td><p>工况识别界面增加泵冲、入口流量、钻压参数显示</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2025-03-07</strong></p></td>
+<td><p>工况识别界面图例和标题大小优化，X轴标签隐藏</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2025-03-07</strong></p></td>
+<td><p>人工识别工况与智能识别对比结论输出功能</p></td>
+<td><p>未开始</p></td>
+<td><p>需开发差异分析算法</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2025-03-07</strong></p></td>
+<td><p>高温高压性质预测界面导入数据保留位数（温度/压力保留1位，其他保留4位）</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2025-03-07</strong></p></td>
+<td><p>井眼清洁界面增加判断结果输出（流量最大值与最小循环流量对比）</p></td>
+<td><p>进行中</p></td>
+<td><p>需添加阈值比较逻辑</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2025-03-11</strong></p></td>
+<td><p>复杂画面各图表增加X轴显示</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2025-03-11</strong></p></td>
+<td><p>复杂工况总体伸缩控制支持手动输入范围</p></td>
+<td><p>进行中</p></td>
+<td><p>需开发动态缩放输入控件</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2025-03-11</strong></p></td>
+<td><p>风险诊断模块实时数据对码问题（录井数据与计算数据时间戳匹配）</p></td>
+<td><p>未开始</p></td>
+<td><p>需时间同步算法开发</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2025-03-11</strong></p></td>
+<td><p>摩阻扭矩界面反演结果与右侧按钮位置交换</p></td>
+<td><p>完成</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<section id="id2">
+<h2>说明：<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>日期</strong>：按问题首次提出日期归类，后续更新标注新日期。</p></li>
+<li><p><strong>状态</strong>：优先标注文档中明确标记的状态（如“完成”“软件确认”），未标注的按上下文推断。</p></li>
+<li><p><strong>备注</strong>：包含负责人、依赖项、技术细节等补充信息，部分复杂问题简化为关键点。</p></li>
+<li><p><strong>合并规则</strong>：跨多日期的同一问题按最新进展标注，重复问题标记“已关闭”。</p></li>
+<li><p><strong>未覆盖项</strong>：部分技术细节（如代码重构、UI封装）因属开发内部流程未列入表格。</p></li>
+</ol>
+<hr class="docutils" />
+</section>
+<section id="id3">
+<h2><strong>后期改进计划（无明确日期）</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>问题描述</p></th>
+<th class="head"><p>状态</p></th>
+<th class="head"><p>备注</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>代码注释、重构及算法优化</p></td>
+<td><p>未开始</p></td>
+<td><p>需制定代码规范并分配任务</p></td>
+</tr>
+<tr class="row-odd"><td><p>交付检查表与UI设计标准文档编写</p></td>
+<td><p>未开始</p></td>
+<td><p>需整理验收标准和UI组件库</p></td>
+</tr>
+<tr class="row-even"><td><p>通用逻辑抽象封装（如图表、表单、数据验证）</p></td>
+<td><p>进行中</p></td>
+<td><p>优先封装高频复用模块</p></td>
+</tr>
+<tr class="row-odd"><td><p>模型架构设计优化（CNN-LSTM、Transformer模型集成）</p></td>
+<td><p>未开始</p></td>
+<td><p>需评估模型性能与计算资源</p></td>
+</tr>
+<tr class="row-even"><td><p>软件安装包瘦身（减少Python依赖、轻量化数据库）</p></td>
+<td><p>进行中</p></td>
+<td><p>需测试SQLite替代方案</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+</section>
+<section id="id4">
+<h2><strong>关键问题说明</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>算法一致性验证</strong>（如摩阻扭矩Matlab源码对比、井筒温度多算法对比）需与算法提供方确认逻辑一致性。</p></li>
+<li><p><strong>动态数据接入</strong>（风险诊断、工况识别）依赖录井系统接口开发，需协调外部团队支持。</p></li>
+<li><p><strong>性能优化</strong>（如工况识别算法速度、温度场计算效率）需针对性测试与并行计算方案设计。</p></li>
+<li><p><strong>用户体验</strong>（布局参考成熟软件、输入参数分级）需与用户代表确认需求优先级。</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">项目概述</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">说明：</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>后期改进计划（无明确日期）</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>关键问题说明</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
