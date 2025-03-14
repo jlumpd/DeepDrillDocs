@@ -6,8 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; My sample book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>可视化模块 &#8212; My sample book</title>
   
   
   
@@ -59,9 +60,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
-    <link rel="index" title="Index" href="#" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '可视化模块';</script>
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="问题一览" href="%E9%97%AE%E9%A2%98%E4%B8%80%E8%A7%88.html" />
+    <link rel="prev" title="项目概述" href="%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -112,8 +115,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -167,9 +168,9 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0.html">项目概述</a></li>
-<li class="toctree-l1"><a class="reference internal" href="%E5%8F%AF%E8%A7%86%E5%8C%96%E6%A8%A1%E5%9D%97.html">可视化模块</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">可视化模块</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%E9%97%AE%E9%A2%98%E4%B8%80%E8%A7%88.html">问题一览</a></li>
 </ul>
 
@@ -247,7 +248,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fgenindex.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F可视化模块.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -259,6 +260,54 @@
   </span>
 <span class="btn__text-container">Open issue</span>
 </a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/可视化模块.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
 </li>
       
   </ul>
@@ -292,7 +341,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -303,11 +354,20 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1></h1>
+    <h1>可视化模块</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>井下风险智能诊断模块</strong> (作业中)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>井下风险智能诊断可视化模块</strong> (未开始)</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -317,13 +377,86 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>可视化模块<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="id2">
+<h2><strong>井下风险智能诊断模块</strong> (作业中)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>钻井工况可视化</p></li>
+<li><p>钻井工况融合诊断</p></li>
+<li><p>井下风险可视化</p></li>
+<li><p>井下风险融合诊断</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2><strong>井下风险智能诊断可视化模块</strong> (未开始)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>钻井工况可视化 (增强)</p>
+<ul>
+<li><p>设计井深 vs 实际轨迹 (2D井筒)</p></li>
+</ul>
+</li>
+<li><p>井下风险可视化 (增强)</p></li>
+<li><p>Web前端展示 (可内嵌软件或大屏/可浏览器打开)</p></li>
+<li><p>数据采集 (增强) -  简化多源数据采集、对码，实现可灵活配置，实现计算和图形化展示的“低代码”开发</p>
+<ul>
+<li><p>录井参数</p></li>
+<li><p>控压钻井参数 (取消)</p></li>
+<li><p>PWD参数</p></li>
+<li><p>地面钻井液体积参数</p></li>
+</ul>
+</li>
+<li><p>仪表盘 (温度场、压力计算、密度组分、井眼清洁) - 卡片式、组件化、可配置</p>
+<ul>
+<li><p>二维动态曲线图</p></li>
+<li><p>实时告警</p></li>
+<li><p>工控面板 (取消)</p></li>
+</ul>
+</li>
+<li><p>3D井筒: 井眼轨迹的类型、钻具组合及钻具的上下运动或旋转运动、井筒内不同类型流体的分界面及流体运动等情况 (可视化考虑范围)</p>
+<ol class="arabic simple">
+<li><p>井眼轨迹</p>
+<ol class="arabic simple">
+<li><p>类型: 直井、定向井、水平井等不同类型</p></li>
+</ol>
+</li>
+<li><p>井筒内钻具
+2. 类型: 钻杆、加重钻杆、钻铤等类型</p></li>
+<li><p>井筒内流体</p>
+<ol class="arabic simple">
+<li><p>钻井液、水泥浆等类型，以及不同密度的流体</p></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>地面钻井流体通道可视化 (双液面监测一体化模块集成)</p>
+<ul>
+<li><p>地面钻井流体通道从泥浆泵、地面管汇进入井筒管柱内，然后从井筒环空出口到控压钻井通道、泥浆罐，根据不同钻井工况，还可能经过节流管汇、液气分离器</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
 
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
-</div>
-
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -335,12 +468,47 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">项目概述</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="%E9%97%AE%E9%A2%98%E4%B8%80%E8%A7%88.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">问题一览</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>井下风险智能诊断模块</strong> (作业中)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>井下风险智能诊断可视化模块</strong> (未开始)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
