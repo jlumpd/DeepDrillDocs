@@ -1,0 +1,771 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>可视化模块参考 &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '可视化模块参考';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="%E4%BA%95%E4%B8%8B%E9%A3%8E%E9%99%A9%E6%99%BA%E8%83%BD%E8%AF%8A%E6%96%AD%E6%A8%A1%E5%9D%97.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="%E4%BA%95%E4%B8%8B%E9%A3%8E%E9%99%A9%E6%99%BA%E8%83%BD%E8%AF%8A%E6%96%AD%E6%A8%A1%E5%9D%97.html">
+                    井下风险智能诊断模块
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0.html">项目概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E5%8F%AF%E8%A7%86%E5%8C%96%E6%A8%A1%E5%9D%97.html">可视化模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E6%A3%80%E6%9F%A5%E8%A1%A8.html">检查表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E9%97%AE%E9%A2%98%E4%B8%80%E8%A7%88.html">问题一览</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F可视化模块参考.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/可视化模块参考.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>可视化模块参考</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">四、交付物与里程碑</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">一、项目范围与排除项</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">二、功能列表及详细描述</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">​<strong>1. 实时监控模块</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">​<strong>2. 三维可视化模块</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">​<strong>3. 数据看板模块</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">​<strong>4. 远程支持模块</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">​<strong>5. 系统管理模块</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>可视化模块参考<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>难点分析：简单理解就是受大量参数影响，需要对复杂的工况进行判断，且想在井场的复杂（影响因素）准确快速地收集数据无疑需要高精度且准确的软硬件计算。为了进行准确的工况判断和诊断，需要大量准确的历史数据积累和按需调整的智能模型和物理模型搭配使用。</p>
+<p>重要度：通过可视化智能化的诊断和准确的模型构建可以加速设计开发过程，保证工程安全推进，更直观地向分析设计人员和操作人员反映实时情况。帮助相关人员做出快速准确判断，减少安全风险并节省大量沉没成本，做到符合需求和实际情况条件的设计做到可持续化发展真正做到节约能耗减少事故和污染排放。</p>
+<p>基于您提供的文件内容和背景描述，以下是对项目重点难点及其必要性的总结：</p>
+<p>本项目的核心是开发一个多源工程参数耦合的可视化钻井工况建模方法与智能诊断技术。该项目旨在通过集成地质数据构建高精度的地质模型，优化钻井路径和设备配置，以及实时监控钻井状态和环境参数，从而提高钻井效率和安全性，减少环境影响。</p>
+<p><strong>重点难点分析：</strong></p>
+<ol class="arabic simple">
+<li><p><strong>钻前设计</strong>：主要难点在于地质数据的不确定性和多相流动分析的复杂性。利用不完全或不确定的数据进行准确的路径规划是一个挑战，此外，精确模拟多相流动和压力分布需要复杂的流体力学计算。</p></li>
+<li><p><strong>钻中可视化监控</strong>：需要在恶劣的井下环境中实时采集和处理数据，保证数据采集系统的稳定性和数据处理的准确性。此外，用户界面的设计必须考虑用户体验，将复杂的钻井数据以易于理解的方式展示。</p></li>
+<li><p><strong>钻后总结分析</strong>：钻井数据的海量性和多样性带来了分析和挖掘信息的难度。需要有效的数据挖掘和分析技术从历史钻井数据中提取有价值的信息。</p></li>
+</ol>
+<p><strong>必要性分析：</strong></p>
+<ol class="arabic simple">
+<li><p><strong>提高安全性和效率</strong>：通过实时监测和智能诊断技术，及时预测和响应复杂情况，提高作业安全性；同时优化钻井参数和路径规划，提高钻井效率，减少成本。</p></li>
+<li><p><strong>降低成本和适应复杂地质条件</strong>：自动化和智能化的钻井过程减少人工干预，降低人力成本，优化钻井方案减少材料和设备的浪费；智能钻井系统能够根据实时数据调整作业参数，更好地适应复杂多变的地质条件。</p></li>
+<li><p><strong>环境友好和技术进步</strong>：智能钻井技术有助于减少对环境的影响，如减少钻井液的使用和排放，降低噪音污染等；利用大数据、人工智能和机器学习等技术，提高钻井作业的智能化水平。</p></li>
+<li><p><strong>数据驱动的决策和持续优化</strong>：整合钻前、钻中和钻后的数据，形成一个数据驱动的决策支持系统，辅助操作人员做出更加科学的决策；通过机器学习算法不断从经验中学习和优化钻井方案。</p></li>
+<li><p><strong>多学科集成和国际竞争力</strong>：通过集成地质学、材料科学、数据科学等多个学科的知识，为钻井过程提供全面的理论支持和技术创新，提升国家或公司在全球能源市场的竞争力。</p></li>
+</ol>
+<p>通过实施这一项目，不仅可以提升钻井操作的安全性和效率，还能推动相关产业的发展，如传感器制造、数据处理和自动化设备等，从而响应全球能源需求的增长和环境保护的要求。</p>
+<p>本项目旨在开发一种多源工程参数耦合的可视化钻井工况建模与智能诊断技术，以集成地质数据构建高精度地质模型，并优化钻井路径及设备配置。通过实时监控钻井状态和环境参数，项目寻求提高钻井效率和安全性，同时减少环境影响。面对地质数据的不确定性和多相流动的复杂性，我们需要精确模拟和实时数据处理来适应恶劣的井下环境和复杂的地质条件。此外，项目还包括用户界面的优化设计，使复杂数据易于理解和操作。通过应用大数据、人工智能及机器学习技术，本项目不仅增强了钻井作业的自动化和智能化，还促进了数据驱动的决策支持系统的形成，实现了从每次钻井经验中的持续学习和优化。这种多学科集成的方法不仅提升了操作的安全性和效率，降低了成本，还有助于应对复杂地质条件，减少环境污染，并增强国际竞争力。</p>
+<p>付工您好，根据韩老师提供的网站https://www.oplaenergy.com/，我阅读了一下，大致的思路如下不知道是否正确？</p>
+<ul class="simple">
+<li><p>控压钻井风险智能识别对标oplaenery的MPDSmart™和OplaSmart™</p></li>
+<li><p>可视化诊断装备对标oplaenery的OplaSim™</p></li>
+<li><p>精细控压钻井模拟对标oplaenery的PMDSmart™</p></li>
+<li><p>远程技术支持平台(RTOC)对标oplaenergy的RTOC工程技术和OplaCloud™</p></li>
+</ul>
+<p>付工，早。以下是我们针对远程诊断技术支持和控压可视化项目的一些问题，麻烦您有时间给我们一些建议：</p>
+<ol class="arabic simple">
+<li><p>智能诊断要诊断的问题和范围是什么？</p></li>
+<li><p>技术支持功能是否需要类似在线会议的视频流、语音流、文本对话功能？</p></li>
+<li><p>控压可视化主要包含哪些方面的可视化？井场布局可视化？井筒可视化？</p></li>
+<li><p>智能诊断要诊断的问题和范围是什么？
+智能诊断针对的还是以前面临的问题和场景，对现场复杂的智能判断，控压钻井参数优化和操作的推荐建议，这几年的研究基础，需要实践应用。进一步的可以加上对控压钻井装备的监控，以及人员操作行为安全的监控，重要性、紧迫性从前到后。</p></li>
+<li><p>技术支持功能是否需要类似在线会议的视频流、语音流、文本对话功能？
+技术支持功能的需求关键是对现场技术的监测、指导，甚至直接控制，视频流、语音流可以作为支持手段，但先要把基础打好。文本对话可以考虑上。重要的基础是将现场的参数、工况等如实呈现在远程技术支持者面前，如同在现场控制房。即现场监控的两台工控机的内容要同步能展示在远程技术支持者面前。当然这是初步，且要考虑数据传输的安全性、稳定性、抗干扰、抗侵入等。在此基础上，考虑考虑进一步的现场、远程技术支持，如在泥浆罐槽加上摄像头（可以提方案，现场是否允许或需要什么权限需要进一步了解。）</p></li>
+<li><p>控压可视化主要包含哪些方面的可视化？井场布局可视化？井筒可视化？
+控压可视化包括地面可视化和井筒可视化，地面可视化主要是控压设备、流程、参数的可视化，井场布局可以做，但相对钻井队井场简化，只涉及与我们相关的部分，如泥浆罐、钻井泵、钻台、井口的旋转防喷器、闸板防喷器、高架槽、钻井队压井管汇、节流管汇、液气分离器等与控压相关的装备；井筒可视化比较抽象一些，因为可测参数比较少，要体现井筒、钻柱、钻井液，以及井筒环空的压力、温度（可以用颜色表示，特定井深，显示压力温度的数值），可视化的关键，要能根据工况需要，动态展示钻柱、流体的运动。另外钻柱包括井筒内、钻探上部。</p></li>
+</ol>
+<p>远程的目的一是充分利用后方技术人员的经验，远程支持钻井现场的控压钻井，二是为以后进一步的发展储备，控压装备与钻机融合，就不需要派人去现场，远程监控和支持即可</p>
+<p>控压可视化也是为了远程诊断服务，当然也会增加现场使用体验。</p>
+<p>针对钻井工况参数众多规律复杂，突破工况参数表征高效准确的难题，采用机器学习与物理模型结合方法提取关键特征，研发工况诊断融合模型，开发工况融合识别与可视化模块1套，满足智能控压对现场工况诊断和可视化的需求。</p>
+<p>多维数据耦合、场景切换耦合、信号传递耦合，体现全局数字化、观测细节化</p>
+<p>我觉得把这几方面分别具体说一下，五大场景要实现什么样的可视化，不用做那么详细</p>
+<p>多维数据耦合：设计数据、工程数据、录井数据等；静态数据、实时数据；
+场景切换耦合：五大场景，以及钻井工况（钻进、起钻、下钻、接单根、循环等）
+信号传递耦合：录井传输数据、控压自控数据、PWD数据等，以及其他数据（如工艺所研发的微球测量数据、双液面测量数据等等）
+体现全局数字化：全局、数字化，两个关键词，怎么体现？
+观测细节化：一些细节，可突出实时演示，耦合实时数据演示，包括地面、井筒</p>
+<p>五大场景，可以谈一些，主要是目前缺乏相关材料，谈不了细，建议不用分五页，可以将语言文字转化为框图、结构图表达，也更为形象</p>
+<p>提了点意见，修改完和前面完整版可以合并一下</p>
+<ul class="simple">
+<li><p>最后一图更新为Opla截图，如果理解错了麻烦您告诉我。</p></li>
+<li><p>21、13两页之前是我误解了，我更新了21页的数据处理流程，截取了架构图中的部分。</p></li>
+<li><p>PPT和报价单名称改为井筒智能可视化监控模块</p></li>
+</ul>
+<hr class="docutils" />
+<section id="id2">
+<h2>四、交付物与里程碑<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>​<strong>阶段</strong></p></th>
+<th class="head"><p>​<strong>时间</strong></p></th>
+<th class="head"><p>​<strong>交付物</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>​<strong>需求确认</strong></p></td>
+<td><p>第1周</p></td>
+<td><p>功能清单与原型图（Axure/Wireframe）</p></td>
+</tr>
+<tr class="row-odd"><td><p>​<strong>核心框架搭建</strong></p></td>
+<td><p>第2-4周</p></td>
+<td><p>数据接入模块、三维引擎基础框架、权限管理系统</p></td>
+</tr>
+<tr class="row-even"><td><p>​<strong>功能开发</strong></p></td>
+<td><p>第5-8周</p></td>
+<td><p>实时监控模块、三维可视化模块、远程支持基础功能</p></td>
+</tr>
+<tr class="row-odd"><td><p>​<strong>集成测试</strong></p></td>
+<td><p>第9-10周</p></td>
+<td><p>压力测试报告（1000+传感器模拟）、用户操作手册（初版）</p></td>
+</tr>
+<tr class="row-even"><td><p>​<strong>用户验收</strong></p></td>
+<td><p>第11-12周</p></td>
+<td><p>可运行软件包（含安装程序）、测试用例报告、二期规划建议</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id3">
+<h2>一、项目范围与排除项<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>​<strong>包含模块</strong></p></th>
+<th class="head"><p>​<strong>排除项（第二期及之后）​</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1. 实时数据采集与监控</p></td>
+<td><p>1. 机器学习模型集成（需历史数据积累）</p></td>
+</tr>
+<tr class="row-odd"><td><p>2. 井筒/设备三维可视化</p></td>
+<td><p>2. 全地质模型构建（需外部地质数据接口）</p></td>
+</tr>
+<tr class="row-even"><td><p>3. 二维动态数据看板</p></td>
+<td><p>3. 自动控制指令下发（需硬件协议深度对接）</p></td>
+</tr>
+<tr class="row-odd"><td><p>4. 远程支持基础功能</p></td>
+<td><p>4. 多语言/多单位制支持（国际化需求延后）</p></td>
+</tr>
+<tr class="row-even"><td><p>5. 告警与事件管理</p></td>
+<td><p>5. 复杂流体力学模拟（需CFD计算资源）</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+</section>
+<section id="id4">
+<h2>二、功能列表及详细描述<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h3>​<strong>1. 实时监控模块</strong><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>​<strong>功能名称</strong></p></th>
+<th class="head"><p>​<strong>详细描述</strong></p></th>
+<th class="head"><p>​<strong>技术实现</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>​<strong>实时数据接入</strong></p></td>
+<td><p>支持OPC UA协议对接钻井参数（压力、温度、钻速等），数据刷新频率≥1秒/次</p></td>
+<td><p>WPF + OPC UA .NET库</p></td>
+</tr>
+<tr class="row-odd"><td><p>​<strong>二维动态曲线图</strong></p></td>
+<td><p>可叠加显示多参数曲线（如环空压力、泵压），支持时间轴缩放与历史数据回放</p></td>
+<td><p>LiveCharts + 动态数据绑定</p></td>
+</tr>
+<tr class="row-even"><td><p>​<strong>实时告警系统</strong></p></td>
+<td><p>阈值告警（如压力超限）、设备状态告警（如防喷器异常），触发界面闪烁与声音提示</p></td>
+<td><p>规则引擎（条件判断） + WPF动画</p></td>
+</tr>
+<tr class="row-odd"><td><p>​<strong>工控面板视图</strong></p></td>
+<td><p>设备状态卡片化展示（如泥浆罐液位、节流阀开度），支持快速定位异常设备</p></td>
+<td><p>WPF Grid布局 + 自定义控件</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>低代码
+实时数据接入，多源数据管理
+井场、井筒、井身结构配置
+钻具尺寸及材质、损耗管理
+二维动态曲线图，叠加显示多参数曲线
+实时告警系统
+工控面板视图</p>
+</section>
+<section id="id6">
+<h3>​<strong>2. 三维可视化模块</strong><a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>​<strong>功能名称</strong></p></th>
+<th class="head"><p>​<strong>详细描述</strong></p></th>
+<th class="head"><p>​<strong>技术实现</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>​<strong>井筒3D模型</strong></p></td>
+<td><p>基于井身结构数据生成井筒、钻柱模型，支持压力/温度颜色映射与动态刷新</p></td>
+<td><p>Three.js + WebGL + WebSocket数据驱动</p></td>
+</tr>
+<tr class="row-odd"><td><p>​<strong>设备布局可视化</strong></p></td>
+<td><p>井口关键设备（防喷器、管汇）的3D模型，点击查看实时参数（如阀门状态）</p></td>
+<td><p>简化CAD模型导入 + Three.js点击事件</p></td>
+</tr>
+<tr class="row-even"><td><p>​<strong>基础流体动画</strong></p></td>
+<td><p>钻井液流动粒子效果（方向、速度），体现环空携岩状态</p></td>
+<td><p>Three.js粒子系统 + 简化的CFD数据插值</p></td>
+</tr>
+<tr class="row-odd"><td><p>​<strong>视角交互</strong></p></td>
+<td><p>旋转/缩放/剖切井筒模型，支持从全局视图快速定位到井口设备</p></td>
+<td><p>Three.js OrbitControls + 射线碰撞检测</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>井筒3D
+设备布局3D
+基础流动3D</p>
+</section>
+<section id="id7">
+<h3>​<strong>3. 数据看板模块</strong><a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>​<strong>功能名称</strong></p></th>
+<th class="head"><p>​<strong>详细描述</strong></p></th>
+<th class="head"><p>​<strong>技术实现</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>​<strong>多维数据叠加</strong></p></td>
+<td><p>设计参数（CAD图纸）与实时数据叠加显示，支持图层开关（如设计井深vs实际轨迹）</p></td>
+<td><p>WPF Canvas叠加 + 透明度控制</p></td>
+</tr>
+<tr class="row-odd"><td><p>​<strong>钻后分析报告</strong></p></td>
+<td><p>生成钻后统计报表（如平均钻速、异常事件次数），支持PDF导出</p></td>
+<td><p><a class="reference external" href="http://ASP.NET">ASP.NET</a> Core报表引擎 + 模板化设计</p></td>
+</tr>
+<tr class="row-even"><td><p>​<strong>事件时间轴</strong></p></td>
+<td><p>按时间顺序记录告警事件（如井涌、漏失），支持点击查看详情与关联数据</p></td>
+<td><p>WPF时间轴控件 + SQLite事件存储</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id8">
+<h3>​<strong>4. 远程支持模块</strong><a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>​<strong>功能名称</strong></p></th>
+<th class="head"><p>​<strong>详细描述</strong></p></th>
+<th class="head"><p>​<strong>技术实现</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>​<strong>远程数据镜像</strong></p></td>
+<td><p>远程端同步显示现场工控机界面（数据、图表、3D模型状态）</p></td>
+<td><p>SignalR实时同步 + 界面元素序列化</p></td>
+</tr>
+<tr class="row-odd"><td><p>​<strong>基础标注工具</strong></p></td>
+<td><p>远程专家可在界面上添加箭头/文字批注，同步至现场操作界面</p></td>
+<td><p>WPF InkCanvas + 批注数据同步</p></td>
+</tr>
+<tr class="row-even"><td><p>​<strong>安全通信通道</strong></p></td>
+<td><p>数据传输加密（AES-256），支持VPN专线连接，记录操作日志</p></td>
+<td><p>.NET加密库 + 日志审计模块</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id9">
+<h3>​<strong>5. 系统管理模块</strong><a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>​<strong>功能名称</strong></p></th>
+<th class="head"><p>​<strong>详细描述</strong></p></th>
+<th class="head"><p>​<strong>技术实现</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>​<strong>用户权限管理</strong></p></td>
+<td><p>角色分级（现场操作员、远程专家、管理员），控制数据访问与操作权限</p></td>
+<td><p><a class="reference external" href="http://ASP.NET">ASP.NET</a> Core Identity + JWT令牌</p></td>
+</tr>
+<tr class="row-odd"><td><p>​<strong>系统配置界面</strong></p></td>
+<td><p>阈值设置（如压力告警范围）、数据源配置（OPC UA地址）、界面主题切换</p></td>
+<td><p>WPF MVVM + XML配置文件</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">四、交付物与里程碑</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">一、项目范围与排除项</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">二、功能列表及详细描述</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">​<strong>1. 实时监控模块</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">​<strong>2. 三维可视化模块</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">​<strong>3. 数据看板模块</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">​<strong>4. 远程支持模块</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">​<strong>5. 系统管理模块</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

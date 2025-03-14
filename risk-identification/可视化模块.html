@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '可视化模块';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="问题一览" href="%E9%97%AE%E9%A2%98%E4%B8%80%E8%A7%88.html" />
+    <link rel="next" title="检查表" href="%E6%A3%80%E6%9F%A5%E8%A1%A8.html" />
     <link rel="prev" title="项目概述" href="%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -171,6 +171,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0.html">项目概述</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">可视化模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E6%A3%80%E6%9F%A5%E8%A1%A8.html">检查表</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%E9%97%AE%E9%A2%98%E4%B8%80%E8%A7%88.html">问题一览</a></li>
 </ul>
 
@@ -364,8 +365,11 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>井下风险智能诊断模块</strong> (作业中)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>井下风险智能诊断可视化模块</strong> (未开始)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">项目范围</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>井下风险智能诊断模块</strong> (作业中)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>井下风险智能诊断可视化模块</strong> (未开始)</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -380,7 +384,9 @@
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>可视化模块<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2><strong>井下风险智能诊断模块</strong> (作业中)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2>项目范围<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h3><strong>井下风险智能诊断模块</strong> (作业中)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>钻井工况可视化</p></li>
 <li><p>钻井工况融合诊断</p></li>
@@ -388,17 +394,36 @@
 <li><p>井下风险融合诊断</p></li>
 </ul>
 </section>
-<section id="id3">
-<h2><strong>井下风险智能诊断可视化模块</strong> (未开始)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>钻井工况可视化 (增强)</p>
+<section id="id4">
+<h3><strong>井下风险智能诊断可视化模块</strong> (未开始)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p><strong>技术路线</strong></p>
 <ul>
-<li><p>设计井深 vs 实际轨迹 (2D井筒)</p></li>
+<li><p>三维展示</p></li>
+<li><p>参考行业大屏产品</p></li>
+<li><p>Web前端呈现 (可内嵌软件或大屏/可浏览器打开)</p></li>
+<li><p><strong>仪表盘(Dashboard)</strong></p>
+<ul class="simple">
+<li><p>主要呈现工况、复杂、风险；</p></li>
+<li><p>以更新颖的方式呈现 (参考三维呈现和行业大屏产品)</p></li>
+<li><p>温度场、压力计算、密度组分、井眼清洁等作为辅助内容可以卡片形式定制化展示</p></li>
+<li><p>二维动态曲线图</p></li>
+<li><p>实时告警</p></li>
+<li><p>工控面板 (取消)</p></li>
 </ul>
 </li>
-<li><p>井下风险可视化 (增强)</p></li>
-<li><p>Web前端展示 (可内嵌软件或大屏/可浏览器打开)</p></li>
-<li><p>数据采集 (增强) -  简化多源数据采集、对码，实现可灵活配置，实现计算和图形化展示的“低代码”开发</p>
+<li><p><strong>钻井工况可视化增强</strong>  - 详细页面</p>
+<ul class="simple">
+<li><p>设计井深 vs 实际轨迹 (2D井筒) - 也带入三维数据内容</p></li>
+</ul>
+</li>
+<li><p><strong>井下风险可视化增强</strong> - 详细页面 - 丰富复杂类型(详细分类) 模型算法的演进</p>
+<ul class="simple">
+<li><p>人工标记和确认正确的工况</p></li>
+</ul>
+</li>
+<li><p><strong>数据采集增强</strong></p>
+<ul class="simple">
+<li><p>简化多源数据采集、对码，实现可灵活配置，实现计算和图形化展示的“低代码”开发 - 后台</p>
 <ul>
 <li><p>录井参数</p></li>
 <li><p>控压钻井参数 (取消)</p></li>
@@ -406,14 +431,12 @@
 <li><p>地面钻井液体积参数</p></li>
 </ul>
 </li>
-<li><p>仪表盘 (温度场、压力计算、密度组分、井眼清洁) - 卡片式、组件化、可配置</p>
-<ul>
-<li><p>二维动态曲线图</p></li>
-<li><p>实时告警</p></li>
-<li><p>工控面板 (取消)</p></li>
 </ul>
 </li>
-<li><p>3D井筒: 井眼轨迹的类型、钻具组合及钻具的上下运动或旋转运动、井筒内不同类型流体的分界面及流体运动等情况 (可视化考虑范围)</p>
+<li><p><strong>3D井筒(独占屏幕)</strong></p>
+<ul class="simple">
+<li><p>井眼轨迹的类型、钻具组合及钻具的上下运动或旋转运动、井筒内不同类型流体的分界面及流体运动等情况 (可视化考虑范围)</p></li>
+</ul>
 <ol class="arabic simple">
 <li><p>井眼轨迹</p>
 <ol class="arabic simple">
@@ -429,12 +452,20 @@
 </li>
 </ol>
 </li>
-<li><p>地面钻井流体通道可视化 (双液面监测一体化模块集成)</p>
-<ul>
+<li><p><strong>地面钻井流体通道可视化 (双液面监测一体化模块集成)</strong> (<strong>最后实现</strong>)</p>
+<ul class="simple">
 <li><p>地面钻井流体通道从泥浆泵、地面管汇进入井筒管柱内，然后从井筒环空出口到控压钻井通道、泥浆罐，根据不同钻井工况，还可能经过节流管汇、液气分离器</p></li>
 </ul>
 </li>
 </ul>
+<p><strong>注意事项</strong></p>
+<ul class="simple">
+<li><p>弱化”控压钻井”概念，不要出现“控压”字样。</p></li>
+</ul>
+<p>![[可视化模块-01.png]]</p>
+<p>![[可视化模块-03.png]]</p>
+<p>![[可视化模块-02.png]]</p>
+</section>
 </section>
 </section>
 
@@ -478,11 +509,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="%E9%97%AE%E9%A2%98%E4%B8%80%E8%A7%88.html"
+       href="%E6%A3%80%E6%9F%A5%E8%A1%A8.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">问题一览</p>
+        <p class="prev-next-title">检查表</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -503,8 +534,11 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>井下风险智能诊断模块</strong> (作业中)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>井下风险智能诊断可视化模块</strong> (未开始)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">项目范围</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>井下风险智能诊断模块</strong> (作业中)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>井下风险智能诊断可视化模块</strong> (未开始)</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
