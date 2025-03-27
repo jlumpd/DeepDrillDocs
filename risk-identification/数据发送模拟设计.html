@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>数据发送模拟设计 &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '数据发送模拟设计';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="%E4%BA%95%E4%B8%8B%E9%A3%8E%E9%99%A9%E6%99%BA%E8%83%BD%E8%AF%8A%E6%96%AD%E6%A8%A1%E5%9D%97.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="%E4%BA%95%E4%B8%8B%E9%A3%8E%E9%99%A9%E6%99%BA%E8%83%BD%E8%AF%8A%E6%96%AD%E6%A8%A1%E5%9D%97.html">
+                    井下风险智能诊断模块
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0.html">项目概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E5%8F%AF%E8%A7%86%E5%8C%96%E6%A8%A1%E5%9D%97.html">可视化模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E6%A3%80%E6%9F%A5%E8%A1%A8.html">检查表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E9%97%AE%E9%A2%98%E4%B8%80%E8%A7%88.html">问题一览</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F数据发送模拟设计.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/数据发送模拟设计.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>数据发送模拟设计</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#net-9">.NET 9 数据发送模拟器技术规划表</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">关键技术点说明</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>数据发送模拟设计<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>好的，<a class="reference external" href="http://xn--4gqvd79bi1e3ywtpfwhl99kfa6913cfval48j.NET">我需要帮用户规划一个使用.NET</a> 9的数据发送模拟器，支持多种协议如WITS、TCP、WebSocket、COM、Modbus、PLC等。首先，我得确定用户的需求是什么。他们可能是在开发一个需要模拟各种数据源的软件，用于测试或开发环境。用户可能希望这个模拟器能够灵活配置，支持同步数据发送，并且要高效稳定。</p>
+<p>首先，技术选型方面，.NET 9是最新的，所以需要考虑其新特性，比如性能优化、跨平台支持等。库的选择很重要，每个协议可能需要不同的库。比如，Modbus可能需要NModbus，TCP和WebSocket可能用System.Net.Sockets和System.Net.WebSockets。PLC部分可能需要厂商特定的库，比如S7NetPlus。COM端口的话，可能需要System.IO.Ports。</p>
+<p>然后，技术路线部分，应该分层架构，比如核心层、协议层、界面层。这样模块化设计，方便扩展和维护。异步编程是关键，因为要处理并发数据发送，避免阻塞。配置管理方面，可能需要JSON或YAML来保存配置，方便用户修改。跨平台支持的话，.NET 9和Avalonia UI可以帮助实现。</p>
+<p>注意事项方面，性能优化很重要，尤其是高并发情况下。协议兼容性需要详细测试，不同设备的实现可能有差异。异常处理要周全，比如网络中断、格式错误等。安全性也不能忽视，特别是开放端口时的防护。用户文档和示例配置是必须的，方便用户上手。</p>
+<p>功能设计需要模块化，每个协议一个模块，比如WITS模块处理石油行业数据，Modbus用主从设备模拟。数据生成部分需要灵活，支持随机、递增、脚本等方式。界面部分需要直观的配置和实时日志。扩展性方面，插件机制和自定义脚本会很有用。</p>
+<p>可能遇到的问题：<a class="reference external" href="http://xn--klqz3e9xbuyab1zcjevvqh9cfv1j.NET">某些协议库是否兼容.NET</a> 9？比如S7NetPlus是否已经更新。异步编程中的资源竞争问题如何处理？配置文件的版本管理和兼容性。不同协议的数据格式差异，如何统一生成和管理。需要调研各个库的最新版本，<a class="reference external" href="http://xn--ruq997b2rbb97a.NET">确保支持.NET</a> 9，并考虑备用方案。异常处理的具体实现细节，比如重连机制、超时设置等。用户权限问题，特别是COM端口访问可能需要管理员权限。</p>
+<p>测试计划也很重要，单元测试覆盖核心逻辑，集成测试验证各协议交互，性能测试确保高并发下的稳定性。文档方面，用户手册和API文档都需要详细编写，方便后续维护和二次开发。</p>
+<p>总结下来，需要分模块开发，优先实现核心框架和常用协议，逐步扩展。确保代码的可维护性和扩展性，同时注重用户体验，提供友好的界面和详细的文档。</p>
+<section id="net-9">
+<h2>.NET 9 数据发送模拟器技术规划表<a class="headerlink" href="#net-9" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>分类</strong></p></th>
+<th class="head"><p><strong>详细内容</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>技术选型</strong></p></td>
+<td><p><strong>核心框架</strong>: .NET 9（利用性能优化及跨平台特性）<br><strong>协议库</strong>: <br>- WITS: 自定义解析器（无标准库）<br>- TCP/UDP: <code class="docutils literal notranslate"><span class="pre">System.Net.Sockets</span></code><br>- WebSocket: <code class="docutils literal notranslate"><span class="pre">System.Net.WebSockets</span></code><br>- COM: <code class="docutils literal notranslate"><span class="pre">System.IO.Ports</span></code><br>- Modbus: <code class="docutils literal notranslate"><span class="pre">NModbus</span></code><br>- PLC: <code class="docutils literal notranslate"><span class="pre">S7NetPlus</span></code> (Siemens PLC) 或 <code class="docutils literal notranslate"><span class="pre">Inxton</span></code><br><strong>UI框架</strong>: <code class="docutils literal notranslate"><span class="pre">Avalonia</span> <span class="pre">UI</span></code>（跨平台支持）<br><strong>数据序列化</strong>: <code class="docutils literal notranslate"><span class="pre">System.Text.Json</span></code><br><strong>依赖注入</strong>: 内置 <code class="docutils literal notranslate"><span class="pre">Microsoft.Extensions.DependencyInjection</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>技术路线</strong></p></td>
+<td><p>1. <strong>分层架构</strong>: 核心逻辑、协议适配层、用户界面分离<br>2. <strong>异步编程</strong>: 全链路 <code class="docutils literal notranslate"><span class="pre">async/await</span></code> 支持高并发<br>3. <strong>配置驱动</strong>: 使用 JSON/YAML 定义设备模板及数据规则<br>4. <strong>插件化设计</strong>: 协议模块动态加载<br>5. <strong>跨平台支持</strong>: 基于 .NET 9 和 Avalonia 实现 Win/Linux/macOS 兼容</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>注意事项</strong></p></td>
+<td><p>1. 协议兼容性: Modbus 变种及 PLC 厂商差异需适配<br>2. 线程安全: 共享资源（如端口/连接池）的锁机制<br>3. 性能调优: 使用 <code class="docutils literal notranslate"><span class="pre">Span&lt;T&gt;</span></code> 及内存池优化大数据场景<br>4. 异常恢复: 网络中断自动重连及状态快照<br>5. 安全防护: 端口暴露时防火墙规则及身份验证</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>核心功能设计</strong></p></td>
+<td><p><strong>协议模块</strong>:<br>- WITS: 石油行业标准数据帧生成<br>- Modbus: 主/从设备模拟，支持 RTU/TCP<br>- PLC: 标签地址映射及周期轮询<br><strong>数据生成器</strong>:<br>- 随机值/递增/脚本引擎（支持 <a class="reference external" href="http://Python.NET">Python.NET</a> 嵌入）<br><strong>调度引擎</strong>:<br>- 时间同步策略（NTP 对齐）<br>- 数据发送 QoS 分级<br><strong>监控界面</strong>:<br>- 实时数据流仪表盘<br>- 协议报文诊断视图</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>扩展性设计</strong></p></td>
+<td><p>1. 插件接口: <code class="docutils literal notranslate"><span class="pre">IPluginProtocol</span></code> 标准接口<br>2. 脚本扩展: 支持 Lua/Python 自定义数据逻辑<br>3. 协议桥接: 跨协议数据转发（如 Modbus→WebSocket）</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>测试策略</strong></p></td>
+<td><p>1. 单元测试: 覆盖协议编解码及状态机<br>2. 集成测试: 使用 Docker 容器化部署 PLC 模拟器（如 <code class="docutils literal notranslate"><span class="pre">pymodbus</span></code>）<br>3. 压力测试: 模拟 1000+ 并发设备</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>部署方案</strong></p></td>
+<td><p>1. 独立应用: 单机版（带安装程序）<br>2. 服务模式: 作为 Windows Service/Linux Daemon 运行<br>3. 容器化: 提供 Docker 镜像支持 Kubernetes 调度</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>文档计划</strong></p></td>
+<td><p>1. 协议配置模板库（GitHub Gist 集成）<br>2. 交互式 API 文档（Swagger/Postman）<br>3. 故障诊断手册（常见错误代码及修复）</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id2">
+<h2>关键技术点说明<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>WITS 协议实现</strong></p>
+<ul class="simple">
+<li><p>需实现 Level 0/1 二进制数据帧结构</p></li>
+<li><p>例：<code class="docutils literal notranslate"><span class="pre">0x01</span> <span class="pre">(SOB)</span> <span class="pre">+</span> <span class="pre">数据长度</span> <span class="pre">+</span> <span class="pre">设备ID</span> <span class="pre">+</span> <span class="pre">数据体</span> <span class="pre">+</span> <span class="pre">校验和</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Modbus 主从同步</strong></p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="c1">// 从站数据响应示例（NModbus）</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">factory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ModbusFactory</span><span class="p">();</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">slave</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="p">.</span><span class="n">CreateSlaveNetwork</span><span class="p">(</span><span class="n">serialPort</span><span class="p">);</span>
+<span class="n">slave</span><span class="p">.</span><span class="n">AddSlave</span><span class="p">(</span><span class="n">factory</span><span class="p">.</span><span class="n">CreateSlave</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="n">slave</span><span class="p">.</span><span class="n">ListenAsync</span><span class="p">();</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>跨协议数据桥接</strong><br />
+使用 <code class="docutils literal notranslate"><span class="pre">Channel&lt;T&gt;</span></code> 实现低耦合数据管道：</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">var</span><span class="w"> </span><span class="n">webSocketChannel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Channel</span><span class="p">.</span><span class="n">CreateUnbounded</span><span class="o">&lt;</span><span class="n">DataPacket</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">modbusChannel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Channel</span><span class="p">.</span><span class="n">CreateUnbounded</span><span class="o">&lt;</span><span class="n">DataPacket</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="c1">// 桥接处理器</span>
+<span class="k">await</span><span class="w"> </span><span class="nf">BridgeDataAsync</span><span class="p">(</span><span class="n">webSocketChannel</span><span class="p">,</span><span class="w"> </span><span class="n">modbusChannel</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>性能关键路径优化</strong></p>
+<ul class="simple">
+<li><p>使用 <code class="docutils literal notranslate"><span class="pre">MemoryPool&lt;byte&gt;</span></code> 复用缓冲区</p></li>
+<li><p>SIMD 指令加速校验和计算</p></li>
+</ul>
+</li>
+</ol>
+<p>建议优先实现 <strong>TCP/WebSocket/Modbus</strong> 核心协议，再逐步扩展 PLC 厂商专有协议。</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#net-9">.NET 9 数据发送模拟器技术规划表</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">关键技术点说明</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -30,7 +30,7 @@
   <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -372,6 +372,39 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>问题一览<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>UWP项目</strong>: ProjectCohension.Modules.LiquidLevelDetection.XamlUI (Universal Windows)</p>
+<ul>
+<li><p>Pages - 页面目录</p>
+<ul>
+<li><p>AppHomepage.xaml - 首页</p>
+<ul>
+<li><p>同步数据启动事件: private void WellScene_Sync_Click(object sender, EventArgs e)</p>
+<ul>
+<li><p>根据事件”AllBasicDataUpdate”，获得每秒的更新数据</p></li>
+<li><p>异步处理获得的数据</p></li>
+<li><p>monitor.Update(是对实时采集的数据进行计算 -&gt; Calculate对所有泥浆罐的实时采集数据进行体积等计算并存储到当前数据中</p></li>
+<li><p>SaveToDatabase方法将采集的数据存储到数据库</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>WPF项目</strong>: ProjectCohension.Modules.LiquidLevelDetection</p>
+<ul>
+<li><p>同步数据(参考UWP)</p></li>
+<li><p>画面参考Pages\New下面的.xaml文件 = 各个种类的钻具管理</p></li>
+<li><p>画面的注册和菜单的生成在ModuleLoader.cs中设置</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple">
+<li><p>新建项目如何带入PropertyExpand</p></li>
+<li></li>
+</ol>
 </section>
 
     <script type="text/x-thebe-config">

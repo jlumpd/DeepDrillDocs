@@ -30,7 +30,7 @@
   <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -366,10 +366,23 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">项目范围</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>井下风险智能诊断模块</strong> (作业中)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>井下风险智能诊断可视化模块</strong> (未开始)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2025年03月18日 与付工讨论可视化范围</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>井下风险智能诊断模块</strong> (作业中)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>井下风险智能诊断可视化模块</strong> (未开始)</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">功能规划</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web">Web可视化应用架构设计</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>一、页面结构规划</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>二、仪表盘页面设计</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>三、详细页面功能规划</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>四、数据采集与后台配置</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>五、技术实现建议</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">仪表盘示例</a></li>
 </ul>
             </nav>
         </div>
@@ -386,7 +399,33 @@
 <section id="id2">
 <h2>项目范围<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="id3">
-<h3><strong>井下风险智能诊断模块</strong> (作业中)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3>2025年03月18日 与付工讨论可视化范围<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>井筒可视化 (范围太大)</p>
+<ul>
+<li><p>2D/3D 未确定</p></li>
+<li><p>针对井下复杂的井筒可视化</p>
+<ul>
+<li><p>准备相关专利、论文</p></li>
+<li><p>使用场景 (可局部展示，突出关键信息)</p>
+<ul>
+<li><p>溢流</p></li>
+<li><p>气侵，PVT公式、气体进入深度体积变大，动画展示?</p></li>
+<li><p>漏失</p></li>
+<li><p>坍塌</p></li>
+<li><p>卡钻 (意义不大)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>地面管汇、装备 (暂不考虑)</p></li>
+<li><p>控压设备 (不能提，暂不考虑)</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3><strong>井下风险智能诊断模块</strong> (作业中)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>钻井工况可视化</p></li>
 <li><p>钻井工况融合诊断</p></li>
@@ -394,8 +433,8 @@
 <li><p>井下风险融合诊断</p></li>
 </ul>
 </section>
-<section id="id4">
-<h3><strong>井下风险智能诊断可视化模块</strong> (未开始)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<section id="id5">
+<h3><strong>井下风险智能诊断可视化模块</strong> (未开始)<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p><strong>技术路线</strong></p>
 <ul>
 <li><p>三维展示</p></li>
@@ -452,7 +491,7 @@
 </li>
 </ol>
 </li>
-<li><p><strong>地面钻井流体通道可视化 (双液面监测一体化模块集成)</strong> (<strong>最后实现</strong>)</p>
+<li><p><strong>2D地面钻井流体通道可视化 (双液面监测一体化模块集成)</strong> (<strong>最后实现</strong>)</p>
 <ul class="simple">
 <li><p>地面钻井流体通道从泥浆泵、地面管汇进入井筒管柱内，然后从井筒环空出口到控压钻井通道、泥浆罐，根据不同钻井工况，还可能经过节流管汇、液气分离器</p></li>
 </ul>
@@ -466,6 +505,398 @@
 <p>![[可视化模块-03.png]]</p>
 <p>![[可视化模块-02.png]]</p>
 </section>
+</section>
+<hr class="docutils" />
+<section id="id6">
+<h2>功能规划<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<section id="web">
+<h3>Web可视化应用架构设计<a class="headerlink" href="#web" title="Link to this heading">#</a></h3>
+<hr class="docutils" />
+<section id="id7">
+<h4><strong>一、页面结构规划</strong><a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>页面名称</p></th>
+<th class="head"><p>功能定位</p></th>
+<th class="head"><p>技术实现优先级</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>1. 仪表盘（首页）</strong></p></td>
+<td><p>核心工况、风险概览与实时监控</p></td>
+<td><p>最高</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2. 钻井工况增强</strong></p></td>
+<td><p>井筒轨迹对比与三维动态模拟</p></td>
+<td><p>高</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>3. 井下风险增强</strong></p></td>
+<td><p>风险分类诊断与历史数据回溯</p></td>
+<td><p>高</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>4. 3D井筒（全屏）</strong></p></td>
+<td><p>井眼轨迹、钻具运动与流体动态可视化</p></td>
+<td><p>中</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>5. 地面流体通道</strong></p></td>
+<td><p>钻井流体路径与参数监控（后期开发）</p></td>
+<td><p>低</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="id8">
+<h4><strong>二、仪表盘页面设计</strong><a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<p><strong>布局与模块划分：</strong>
+<img alt="仪表盘布局示意图" src="https://via.placeholder.com/800x400?text=Dashboard+Layout" /></p>
+<ol class="arabic simple">
+<li><p><strong>核心指标卡（左上方）</strong></p>
+<ul class="simple">
+<li><p><strong>实时工况</strong>：钻速（ROP）、井深（实钻/设计）、泵压、扭矩</p></li>
+<li><p><strong>风险概览</strong>：当前风险等级（高/中/低）、复杂事件数量（卡钻、井漏等）</p></li>
+<li><p><strong>三维井筒缩略图</strong>：动态显示井眼轨迹类型（直井/定向井）及钻具位置</p></li>
+</ul>
+</li>
+<li><p><strong>三维可视化主区域（中央）</strong></p>
+<ul class="simple">
+<li><p><strong>井筒动态模型</strong>：简化的3D井眼轨迹与钻具运动（旋转/上下运动）</p></li>
+<li><p><strong>流体分界面</strong>：不同密度流体的颜色分层（如钻井液vs水泥浆）</p></li>
+</ul>
+</li>
+<li><p><strong>辅助卡片（右侧）</strong></p>
+<ul class="simple">
+<li><p><strong>温度场</strong>：井深-温度梯度曲线图 + 当前最高温度值</p></li>
+<li><p><strong>压力计算</strong>：井筒压力分布柱状图（动态更新）</p></li>
+<li><p><strong>密度组分</strong>：环形图显示流体密度比例（钻井液/气体/岩屑）</p></li>
+<li><p><strong>井眼清洁度</strong>：进度条显示清洁指数（0-100%）+ 报警阈值提示</p></li>
+</ul>
+</li>
+<li><p><strong>二维动态曲线区（下方）</strong></p>
+<ul class="simple">
+<li><p><strong>曲线组</strong>：钻压、扭矩、流量随时间变化的折线图（支持叠加对比）</p></li>
+<li><p><strong>时间轴</strong>：可拖动选择历史时段或切换实时模式</p></li>
+</ul>
+</li>
+<li><p><strong>实时告警栏（顶部浮动）</strong></p>
+<ul class="simple">
+<li><p>滚动显示报警内容（如“环空压力超限”、“钻具振动异常”）</p></li>
+<li><p>报警级别：红（紧急）、橙（警告）、黄（注意）</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="id9">
+<h4><strong>三、详细页面功能规划</strong><a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
+<p><strong>1. 钻井工况增强页面</strong></p>
+<ul class="simple">
+<li><p><strong>核心功能</strong>：</p>
+<ul>
+<li><p>2D/3D井眼轨迹对比（设计vs实际，支持缩放/旋转）</p></li>
+<li><p>钻具组合动态模拟（显示钻杆、钻铤类型及运动状态）</p></li>
+<li><p><strong>交互操作</strong>：点击钻具查看材质参数、疲劳寿命预测</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>2. 井下风险增强页面</strong></p>
+<ul class="simple">
+<li><p><strong>数据可视化</strong>：</p>
+<ul>
+<li><p>风险分类热力图（卡钻、井漏、气侵等按井深分布）</p></li>
+<li><p>历史复杂事件时间轴（支持人工标记修正记录）</p></li>
+<li><p>模型算法演进对比：新旧算法风险预测准确率曲线</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>3. 3D井筒全屏页面</strong></p>
+<ul class="simple">
+<li><p><strong>动态效果</strong>：</p>
+<ul>
+<li><p>流体运动粒子效果（钻井液循环路径模拟）</p></li>
+<li><p>钻具运动速度控制（拖动滑块调整动画速度）</p></li>
+<li><p>剖面切割工具：显示指定深度的温度/压力截面</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id10">
+<h4><strong>四、数据采集与后台配置</strong><a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>数据源</p></th>
+<th class="head"><p>前端展示参数示例</p></th>
+<th class="head"><p>后台配置项</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>录井参数</strong></p></td>
+<td><p>立压、套压、出口流量</p></td>
+<td><p>数据映射规则、采样频率</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>PWD参数</strong></p></td>
+<td><p>环空压力、ECD（当量循环密度）</p></td>
+<td><p>计算公式自定义、单位切换</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>地面钻井液</strong></p></td>
+<td><p>罐体积变化曲线、液位报警</p></td>
+<td><p>阈值设置、数据源优先级</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="id11">
+<h4><strong>五、技术实现建议</strong><a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>三维引擎</strong>：Three.js + WebGL（支持跨平台浏览器渲染）</p></li>
+<li><p><strong>图表库</strong>：ECharts（动态曲线）+ <a class="reference external" href="http://Deck.gl">Deck.gl</a>（热力图）</p></li>
+<li><p><strong>实时通信</strong>：WebSocket + MQTT协议（高频数据更新）</p></li>
+<li><p><strong>低代码配置</strong>：JSON Schema动态生成图表配置面板</p></li>
+</ol>
+<hr class="docutils" />
+<p><strong>示例图表：</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// ECharts 动态曲线配置示例</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">option</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">xAxis</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="nx">timestamps</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">yAxis</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;钻压 (kN)&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">series</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;line&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="nx">drillPressure</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">smooth</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">areaStyle</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;rgba(64, 158, 255, 0.2)&#39;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}]</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>交付物优先级排序：</strong></p>
+<ol class="arabic simple">
+<li><p>仪表盘核心模块（3D井筒缩略图+实时告警）</p></li>
+<li><p>钻井工况与风险增强页面基础功能</p></li>
+<li><p>数据采集配置后台</p></li>
+<li><p>3D全屏井筒高级功能</p></li>
+<li><p>地面流体通道集成</p></li>
+</ol>
+<p>此设计平衡了行业大屏的信息密度与交互深度，同时通过模块化布局适应不同角色（工程师/管理人员）的监控需求。</p>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id12">
+<h2>仪表盘示例<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
+<p>以下是一个基于仪表盘设计的HTML+CSS示例，包含核心指标卡、辅助卡片和实时告警栏的代码片段（使用模拟数据）：</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="c">/* 基础样式 - 模拟大屏暗色主题 */</span>
+<span class="w">    </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#1a1d24</span><span class="p">;</span>
+<span class="w">      </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#fff</span><span class="p">;</span>
+<span class="w">      </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">Arial</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">      </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">      </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="p">.</span><span class="nc">dashboard</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="k">grid</span><span class="p">;</span>
+<span class="w">      </span><span class="k">grid-template-columns</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="kt">px</span><span class="w"> </span><span class="mi">1</span><span class="n">fr</span><span class="w"> </span><span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">      </span><span class="k">gap</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c">/* 卡片通用样式 */</span>
+<span class="w">    </span><span class="p">.</span><span class="nc">card</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#2a2e38</span><span class="p">;</span>
+<span class="w">      </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">      </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">      </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.2</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c">/* 核心指标卡 */</span>
+<span class="w">    </span><span class="p">.</span><span class="nc">core-metrics</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="k">grid</span><span class="p">;</span>
+<span class="w">      </span><span class="k">gap</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="p">.</span><span class="nc">metric-item</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
+<span class="w">      </span><span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">space-between</span><span class="p">;</span>
+<span class="w">      </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">      </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#373c49</span><span class="p">;</span>
+<span class="w">      </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c">/* 温度场卡片 */</span>
+<span class="w">    </span><span class="p">.</span><span class="nc">temp-chart</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">      </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">to</span><span class="w"> </span><span class="kc">top</span><span class="p">,</span><span class="w"> </span><span class="mh">#ff6b6b</span><span class="p">,</span><span class="w"> </span><span class="mh">#ff8e53</span><span class="p">);</span>
+<span class="w">      </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">      </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c">/* 井眼清洁度进度条 */</span>
+<span class="w">    </span><span class="p">.</span><span class="nc">clean-progress</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">      </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#37474f</span><span class="p">;</span>
+<span class="w">      </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">      </span><span class="k">overflow</span><span class="p">:</span><span class="w"> </span><span class="kc">hidden</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="p">.</span><span class="nc">clean-progress-bar</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">      </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">      </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#4db6ac</span><span class="p">;</span>
+<span class="w">      </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="k">width</span><span class="w"> </span><span class="mf">0.3</span><span class="kt">s</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c">/* 实时告警栏 */</span>
+<span class="w">    </span><span class="p">.</span><span class="nc">alert-bar</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">fixed</span><span class="p">;</span>
+<span class="w">      </span><span class="k">top</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">      </span><span class="k">left</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">      </span><span class="k">right</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">      </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#d32f2f</span><span class="p">;</span>
+<span class="w">      </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">      </span><span class="k">animation</span><span class="p">:</span><span class="w"> </span><span class="n">alertSlide</span><span class="w"> </span><span class="mi">1</span><span class="kt">s</span><span class="w"> </span><span class="kc">ease-out</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="p">@</span><span class="k">keyframes</span><span class="w"> </span><span class="nt">alertSlide</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">from</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">translateY</span><span class="p">(</span><span class="mi">-100</span><span class="kt">%</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="nt">to</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">translateY</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="cm">&lt;!-- 实时告警栏 --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert-bar&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background: #d32f2f&quot;</span><span class="p">&gt;</span>
+    ⚠️ 环空压力超限！当前值：32.5MPa (阈值：30MPa)
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;dashboard&quot;</span><span class="p">&gt;</span>
+    <span class="cm">&lt;!-- 左侧核心指标 --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card core-metrics&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>实时工况<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;metric-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>钻速 (ROP)<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: #4db6ac&quot;</span><span class="p">&gt;</span>18.2 m/h<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;metric-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>井深 (实钻/设计)<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>3,245m / 3,800m<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;metric-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>泵压<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: #ff8e53&quot;</span><span class="p">&gt;</span>21.4 MPa<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      
+      <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;margin-top: 20px&quot;</span><span class="p">&gt;</span>风险概览<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;metric-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>当前风险等级<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: #ff6b6b&quot;</span><span class="p">&gt;</span>HIGH<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;metric-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>复杂事件<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>卡钻(2) 井漏(1)<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="cm">&lt;!-- 中间主区域（三维可视化占位） --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;height: 600px&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>井筒动态模型<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background: #373c49; height: 90%; border-radius: 6px&quot;</span><span class="p">&gt;</span>
+        <span class="cm">&lt;!-- 此处嵌入Three.js三维场景 --&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="cm">&lt;!-- 右侧辅助卡片 --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;display: grid; gap: 20px&quot;</span><span class="p">&gt;</span>
+      <span class="cm">&lt;!-- 温度场卡片 --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>温度场<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;temp-chart&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;margin-top: 10px&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>当前最高温度<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;font-size: 24px; color: #ff8e53&quot;</span><span class="p">&gt;</span>148°C<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;opacity: 0.8&quot;</span><span class="p">&gt;</span>@ 3,100m<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+      <span class="cm">&lt;!-- 密度组分卡片 --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>密度组分<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;display: flex; align-items: center; height: 120px&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 100px; height: 100px; </span>
+<span class="s">              background: conic-gradient(</span>
+<span class="s">                #4db6ac 0% 65%,</span>
+<span class="s">                #ff8e53 65% 85%,</span>
+<span class="s">                #d32f2f 85% 100%</span>
+<span class="s">              );</span>
+<span class="s">              border-radius: 50%&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;margin-left: 20px&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>▶ 钻井液 65%<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>▶ 气体 20%<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>▶ 岩屑 15%<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+      <span class="cm">&lt;!-- 井眼清洁度卡片 --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>井眼清洁度<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;font-size: 32px; margin: 10px 0&quot;</span><span class="p">&gt;</span>75%<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;clean-progress&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;clean-progress-bar&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;margin-top: 10px; color: #ff8e53&quot;</span><span class="p">&gt;</span>
+          ⚠️ 低于安全阈值 (80%)
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><strong>关键特性说明：</strong></p>
+<ol class="arabic simple">
+<li><p><strong>布局架构</strong><br />
+使用CSS Grid实现三列布局（300px - 自适应 - 300px），支持响应式调整</p></li>
+<li><p><strong>视觉设计</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>暗色主题 (#1a1d24) 符合工业大屏标准</p></li>
+<li><p>卡片使用层次化阴影和圆角</p></li>
+<li><p>关键数据使用高亮色（如#4db6ac表示正常值，#ff8e53表示警告）</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>动态元素</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>实时告警栏顶部浮动出现（可通过JavaScript定时更新）</p></li>
+<li><p>清洁度进度条使用CSS过渡动画</p></li>
+<li><p>温度场渐变背景模拟热力图效果</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p><strong>数据可视化</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>密度组分使用CSS conic-gradient实现环形图</p></li>
+<li><p>三维区域预留WebGL容器空间</p></li>
+<li><p>核心指标使用对比式布局（标签-数值）</p></li>
+</ul>
+<p><strong>扩展建议：</strong></p>
+<ol class="arabic simple">
+<li><p>添加ECharts图表库实现动态曲线</p></li>
+<li><p>使用WebSocket实现实时数据推送</p></li>
+<li><p>增加卡片hover动效提升交互体验</p></li>
+<li><p>添加分辨率适配媒体查询</p></li>
+</ol>
+<p>此示例可作为基础框架，实际开发中需根据三维引擎（如Three.js）和数据接口进行扩展。</p>
 </section>
 </section>
 
@@ -535,10 +966,23 @@
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">项目范围</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>井下风险智能诊断模块</strong> (作业中)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>井下风险智能诊断可视化模块</strong> (未开始)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2025年03月18日 与付工讨论可视化范围</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>井下风险智能诊断模块</strong> (作业中)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>井下风险智能诊断可视化模块</strong> (未开始)</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">功能规划</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web">Web可视化应用架构设计</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>一、页面结构规划</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>二、仪表盘页面设计</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>三、详细页面功能规划</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>四、数据采集与后台配置</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>五、技术实现建议</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">仪表盘示例</a></li>
 </ul>
   </nav></div>
 

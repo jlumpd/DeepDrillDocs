@@ -30,7 +30,7 @@
   <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -368,7 +368,30 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">待办事项</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">待办事项</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>选择建议</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>1. 理解现有架构</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>2. 迁移策略</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wpf-uwp-winui-3"><strong>方案一：保留 WPF 主体，逐步替换 UWP 部分为 WinUI 3</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#winui-3-wpf"><strong>方案二：重构为 WinUI 3 + WPF 混合应用</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>3. 关键技术点</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#api"><strong>API 兼容性</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mvvm"><strong>数据绑定与 MVVM</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>第三方库迁移</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>4. 常见问题与解决</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xaml"><strong>问题 1：XAML 命名空间冲突</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>问题 2：异步操作线程切换</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>问题 3：样式和主题适配</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>5. 迁移后的优化</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><strong>总结</strong></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -384,27 +407,321 @@
 <h1>项目概述<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
 <h2>待办事项<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<ul class="simple">
+<ul>
 <li><p><strong>双液面监测一体化模块</strong></p>
-<ul>
-<li><p>界面设计及用户体验改进 (次优先级)</p></li>
-<li><p>环空液面集成 (中优先级)</p></li>
+<ul class="simple">
+<li><p>环空液面集成 (高优先级)</p></li>
+<li><p>WPF界面设计及用户体验改进 (中优先级)</p></li>
 </ul>
 </li>
-<li><p><strong>井喷预警一体化平台</strong> (高优先级)</p>
+<li><p><strong>井喷风险智能预警一体化平台</strong> (高优先级)</p>
 <ul>
-<li><p>提供最小化项目模版</p></li>
-<li><p>提供各功能代码示例</p></li>
-<li><p>演示指导</p></li>
+<li><p>最小化功能项目模版 (高优先级)</p>
+<ul class="simple">
+<li><p>调查SmartMPC项目WPF部分实现</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>WITS接入</p></li>
+<li><p>数据输入</p></li>
+<li><p>数据导入</p></li>
+<li><p>实时数据获取</p></li>
+<li><p>数据折线图表示</p></li>
+<li><p>Python代码调用</p></li>
+</ol>
+</li>
+<li><p>开发文档 (高优先级)</p></li>
+<li><p>演示指导 (高优先级)</p></li>
+<li><p>界面设计及用户体验改进 (中优先级)</p></li>
 </ul>
 </li>
-<li><p><strong>井场昆仑数智大屏展示</strong></p>
-<ul>
-<li><p>井场布局等布局设计 (次优先级)</p></li>
-<li><p>井场布局等控件Web实现 (次优先级)</p></li>
+<li><p><strong>塔里木昆仑数智大屏展示</strong></p>
+<ul class="simple">
+<li><p>塔里木大屏布局设计 (中优先级)</p></li>
+<li><p>塔里木大屏Web搭建 (低优先级)</p></li>
+</ul>
+</li>
+<li><p><strong><a class="reference external" href="http://xn--6kq92u.NET">基于.NET</a> 9及WPF架构升级</strong></p>
+<ul class="simple">
+<li><p>数据采集优化升级 (支持模拟器、WITS、COM、PLC等)</p></li>
+<li><p>多源化数据采集及灵活性配置</p></li>
+<li><p>可配置组件化设计</p></li>
+<li><p>WPF支持的现代UI框架</p></li>
 </ul>
 </li>
 </ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>项目</p></th>
+<th class="head"><p>人员</p></th>
+<th class="head"><p>安排</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>双液面检测一体化模块</p></td>
+<td><p>待办</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>双液面检测一体化模块</p></td>
+<td><p>正昕</p></td>
+<td><p>环空液面融合(WPF)用户界面用户体验调整<br>开发文档编制</p></td>
+</tr>
+<tr class="row-even"><td><p>双液面检测一体化模块</p></td>
+<td><p>松杰</p></td>
+<td><p>其它课题融合(WPF)代码示例: 1. WITS接入 2. 数据输入 3. 数据导入 4. 实时数据获取 5. 实时数据折线图展示 6. Python代码调用<br>开发文档编制</p></td>
+</tr>
+<tr class="row-odd"><td><p>双液面检测一体化模块</p></td>
+<td><p>崔驰坤</p></td>
+<td><p>塔里木大屏融合(Web)架构设计</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Design</p></li>
+<li><p>Performance</p></li>
+<li><p>OS Integration</p></li>
+<li><p>Contoso Camera Manger - WPF</p></li>
+<li><p>Contoso Studio - WinUI 3 + WinAppSDK</p></li>
+</ul>
+<section id="id3">
+<h3><strong>选择建议</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>​<strong>新项目开发</strong>：</p>
+<ul>
+<li><p>需要现代化 UI 和未来扩展性 → ​<strong>WinUI 3</strong>。</p></li>
+<li><p>需要跨设备支持且不依赖复杂系统 API → ​<strong>UWP</strong>​（但建议转向 WinUI 3）。</p></li>
+</ul>
+</li>
+<li><p>​<strong>旧项目维护</strong>：</p>
+<ul>
+<li><p>已有 WPF 应用 → 继续维护，或逐步迁移到 WinUI 3。</p></li>
+</ul>
+</li>
+<li><p>​<strong>混合开发</strong>：</p>
+<ul>
+<li><p>在 WPF/WinForms 中嵌入现代化控件 → ​<strong>WinUI 3</strong>。</p></li>
+</ul>
+</li>
+</ul>
+<p>WinUI 3 是微软目前的核心方向，适合希望长期维护的 Windows 应用；WPF 和 UWP 则更适合特定遗留场景。</p>
+<hr class="docutils" />
+<p>将现有的 <strong>UWP + WPF 混合应用</strong>迁移到 <strong>WinUI 3 + WPF 混合应用</strong>，需要结合技术差异和混合架构的特点逐步推进。以下是具体迁移步骤和注意事项：</p>
+</section>
+<hr class="docutils" />
+<section id="id4">
+<h3><strong>1. 理解现有架构</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>当前混合模式</strong>：</p>
+<ul>
+<li><p><strong>UWP 嵌入 WPF</strong>：通过 <code class="docutils literal notranslate"><span class="pre">XAML</span> <span class="pre">Islands</span></code>（如 <code class="docutils literal notranslate"><span class="pre">WindowsXamlHost</span></code>）在 WPF 应用中嵌入 UWP 控件。</p></li>
+<li><p><strong>WPF 嵌入 UWP</strong>：通过 UWP 应用调用 WPF 组件（较少见，需通过进程间通信）。</p></li>
+</ul>
+</li>
+<li><p><strong>依赖项</strong>：明确 UWP 和 WPF 之间的数据交互方式（如 <code class="docutils literal notranslate"><span class="pre">IPC</span></code>、<code class="docutils literal notranslate"><span class="pre">共享存储</span></code>、<code class="docutils literal notranslate"><span class="pre">事件</span></code>等）。</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id5">
+<h3><strong>2. 迁移策略</strong><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="wpf-uwp-winui-3">
+<h4><strong>方案一：保留 WPF 主体，逐步替换 UWP 部分为 WinUI 3</strong><a class="headerlink" href="#wpf-uwp-winui-3" title="Link to this heading">#</a></h4>
+<ul>
+<li><p><strong>适用场景</strong>：UWP 仅用于部分现代化 UI 模块（如导航栏、图表等）。</p></li>
+<li><p><strong>步骤</strong>：</p>
+<ol class="arabic">
+<li><p><strong>创建 WinUI 3 控件库</strong>：</p>
+<ul class="simple">
+<li><p>在现有解决方案中新建 WinUI 3 项目（如 <code class="docutils literal notranslate"><span class="pre">WinUI3Controls</span></code>）。</p></li>
+<li><p>将 UWP 的 XAML 控件和逻辑逐步迁移到 WinUI 3。</p></li>
+<li><p>注意 API 差异（例如 <code class="docutils literal notranslate"><span class="pre">Windows.*</span></code> 命名空间需替换为 <code class="docutils literal notranslate"><span class="pre">Microsoft.UI.*</span></code>）。</p></li>
+</ul>
+</li>
+<li><p><strong>在 WPF 中嵌入 WinUI 3</strong>：</p>
+<ul class="simple">
+<li><p>使用 <strong>Windows App SDK 的 XAML Islands</strong> 在 WPF 中嵌入 WinUI 3 控件。</p></li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- WPF 中嵌入 WinUI 3 控件 --&gt;</span>
+<span class="nt">&lt;Window</span><span class="w"> </span><span class="na">x:Class=</span><span class="s">&quot;WpfApp.MainWindow&quot;</span>
+<span class="w">        </span><span class="na">xmlns:winui=</span><span class="s">&quot;clr-namespace:Microsoft.UI.Xaml.Controls;assembly=WinRT.Runtime&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Grid&gt;</span>
+<span class="w">        </span><span class="nt">&lt;winui:Frame</span><span class="w"> </span><span class="na">x:Name=</span><span class="s">&quot;WinUIFrame&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/Grid&gt;</span>
+<span class="nt">&lt;/Window&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>逐步替换 UWP 控件</strong>：</p>
+<ul class="simple">
+<li><p>将原 UWP 的 <code class="docutils literal notranslate"><span class="pre">WindowsXamlHost</span></code> 替换为 WinUI 3 的控件。</p></li>
+<li><p>调整数据交互逻辑（如绑定、事件）。</p></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="winui-3-wpf">
+<h4><strong>方案二：重构为 WinUI 3 + WPF 混合应用</strong><a class="headerlink" href="#winui-3-wpf" title="Link to this heading">#</a></h4>
+<ul>
+<li><p><strong>适用场景</strong>：需要全面升级 UI 并保留部分 WPF 业务逻辑。</p></li>
+<li><p><strong>步骤</strong>：</p>
+<ol class="arabic">
+<li><p><strong>新建 WinUI 3 主项目</strong>：</p>
+<ul class="simple">
+<li><p>使用 Windows App SDK 模板创建 WinUI 3 项目（如 <code class="docutils literal notranslate"><span class="pre">WinUI3App</span></code>）。</p></li>
+<li><p>将原 UWP 的主界面逻辑迁移到 WinUI 3。</p></li>
+</ul>
+</li>
+<li><p><strong>集成 WPF 组件</strong>：</p>
+<ul class="simple">
+<li><p>通过 <strong>进程间通信（IPC）</strong> 或 <strong>.NET 类库共享</strong> 调用 WPF 模块。</p></li>
+</ul>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="c1">// 在 WinUI 3 中调用 WPF 组件（需跨进程通信）</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">wpfProcess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Process</span><span class="p">();</span>
+<span class="n">wpfProcess</span><span class="p">.</span><span class="n">StartInfo</span><span class="p">.</span><span class="n">FileName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;WpfLegacyModule.exe&quot;</span><span class="p">;</span>
+<span class="n">wpfProcess</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>共享代码和资源</strong>：</p>
+<ul class="simple">
+<li><p>将公共逻辑（如 ViewModel、工具类）提取到 <strong>.NET Standard 类库</strong>。</p></li>
+<li><p>迁移资源文件（如样式、图标）到 WinUI 3 的 <code class="docutils literal notranslate"><span class="pre">ResourceDictionary</span></code>。</p></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id6">
+<h3><strong>3. 关键技术点</strong><a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<section id="api">
+<h4><strong>API 兼容性</strong><a class="headerlink" href="#api" title="Link to this heading">#</a></h4>
+<ul>
+<li><p><strong>UWP → WinUI 3</strong>：</p>
+<ul class="simple">
+<li><p>替换 <code class="docutils literal notranslate"><span class="pre">Windows.UI.Xaml</span></code> 为 <code class="docutils literal notranslate"><span class="pre">Microsoft.UI.Xaml</span></code>。</p></li>
+<li><p>使用 <code class="docutils literal notranslate"><span class="pre">DispatcherQueue</span></code> 代替 <code class="docutils literal notranslate"><span class="pre">CoreDispatcher</span></code>。</p></li>
+</ul>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="c1">// UWP</span>
+<span class="k">await</span><span class="w"> </span><span class="n">Dispatcher</span><span class="p">.</span><span class="n">RunAsync</span><span class="p">(</span><span class="n">CoreDispatcherPriority</span><span class="p">.</span><span class="n">Normal</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">});</span>
+
+<span class="c1">// WinUI 3</span>
+<span class="k">await</span><span class="w"> </span><span class="n">DispatcherQueue</span><span class="p">.</span><span class="n">TryEnqueue</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>沙盒限制解除</strong>：</p>
+<ul class="simple">
+<li><p>直接访问文件系统、注册表等（需处理权限问题）。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="mvvm">
+<h4><strong>数据绑定与 MVVM</strong><a class="headerlink" href="#mvvm" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>兼容性</strong>：</p>
+<ul>
+<li><p>WinUI 3 的绑定语法与 UWP 几乎一致，但需注意 <code class="docutils literal notranslate"><span class="pre">x:Bind</span></code> 的默认模式差异。</p></li>
+<li><p>共享 ViewModel 层（确保使用 <code class="docutils literal notranslate"><span class="pre">INotifyPropertyChanged</span></code> 或社区库如 <code class="docutils literal notranslate"><span class="pre">MVVM</span> <span class="pre">Toolkit</span></code>）。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id7">
+<h4><strong>第三方库迁移</strong><a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>检查现有 UWP 库是否支持 WinUI 3（如 <code class="docutils literal notranslate"><span class="pre">CommunityToolkit</span></code> 已支持）。</p></li>
+<li><p>替换不兼容的库为 Windows App SDK 版本（如 <code class="docutils literal notranslate"><span class="pre">Microsoft.Graphics.Win2D</span></code> → <code class="docutils literal notranslate"><span class="pre">Win2D.uwp</span></code>）。</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id8">
+<h3><strong>4. 常见问题与解决</strong><a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<section id="xaml">
+<h4><strong>问题 1：XAML 命名空间冲突</strong><a class="headerlink" href="#xaml" title="Link to this heading">#</a></h4>
+<ul>
+<li><p><strong>症状</strong>：WPF 和 WinUI 3 的 XAML 控件命名冲突。</p></li>
+<li><p><strong>解决</strong>：</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- 显式指定别名 --&gt;</span>
+xmlns:winui=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+xmlns:wpf=&quot;clr-namespace:System.Windows.Controls;assembly=PresentationFramework&quot;
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="id9">
+<h4><strong>问题 2：异步操作线程切换</strong><a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
+<ul>
+<li><p><strong>症状</strong>：WinUI 3 的 <code class="docutils literal notranslate"><span class="pre">DispatcherQueue</span></code> 与 WPF 的 <code class="docutils literal notranslate"><span class="pre">Dispatcher</span></code> 不兼容。</p></li>
+<li><p><strong>解决</strong>：</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="c1">// 在 WPF 中调用 WinUI 3 的异步方法</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">dispatcherQueue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Microsoft</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">Dispatching</span><span class="p">.</span><span class="n">DispatcherQueue</span><span class="p">.</span><span class="n">GetForCurrentThread</span><span class="p">();</span>
+<span class="n">dispatcherQueue</span><span class="p">.</span><span class="n">TryEnqueue</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">WinUIMethod</span><span class="p">();</span><span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="id10">
+<h4><strong>问题 3：样式和主题适配</strong><a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
+<ul>
+<li><p><strong>症状</strong>：WinUI 3 的 Fluent Design 样式与 WPF 不匹配。</p></li>
+<li><p><strong>解决</strong>：</p>
+<ul class="simple">
+<li><p>在 WPF 中模拟 Fluent 样式（如使用 <code class="docutils literal notranslate"><span class="pre">ModernWPF</span></code> 库）。</p></li>
+<li><p>在 WinUI 3 中统一主题色：</p></li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ResourceDictionary&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ResourceDictionary.ThemeDictionaries&gt;</span>
+<span class="w">        </span><span class="nt">&lt;ResourceDictionary</span><span class="w"> </span><span class="na">x:Key=</span><span class="s">&quot;Light&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;SolidColorBrush</span><span class="w"> </span><span class="na">x:Key=</span><span class="s">&quot;SystemAccentColor&quot;</span><span class="w"> </span><span class="na">Color=</span><span class="s">&quot;#0067C0&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/ResourceDictionary&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/ResourceDictionary.ThemeDictionaries&gt;</span>
+<span class="nt">&lt;/ResourceDictionary&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id11">
+<h3><strong>5. 迁移后的优化</strong><a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>性能优化</strong>：</p>
+<ul class="simple">
+<li><p>使用 WinUI 3 的 <strong>热重载</strong> 和 <strong>Composition API</strong> 提升渲染性能。</p></li>
+</ul>
+</li>
+<li><p><strong>部署简化</strong>：</p>
+<ul class="simple">
+<li><p>将 WPF 和 WinUI 3 模块打包为单个 MSIX（需配置依赖项）。</p></li>
+</ul>
+</li>
+<li><p><strong>未来扩展</strong>：</p>
+<ul class="simple">
+<li><p>逐步将 WPF 模块迁移到 WinUI 3，最终实现纯 WinUI 3 应用。</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="id12">
+<h3><strong>总结</strong><a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>渐进式迁移</strong>：优先替换高价值 UWP 模块为 WinUI 3，保留 WPF 核心逻辑。</p></li>
+<li><p><strong>混合架构</strong>：利用 XAML Islands 和 IPC 实现无缝整合。</p></li>
+<li><p><strong>规避风险</strong>：充分测试沙盒解除后的系统 API 调用，确保兼容性。</p></li>
+</ul>
+<p>微软官方文档和示例（如 <a class="reference external" href="https://github.com/microsoft/WindowsAppSDK-Samples">Windows App SDK 示例</a>）是迁移过程中的重要参考。</p>
+</section>
 </section>
 </section>
 
@@ -473,7 +790,30 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">待办事项</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">待办事项</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>选择建议</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>1. 理解现有架构</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>2. 迁移策略</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wpf-uwp-winui-3"><strong>方案一：保留 WPF 主体，逐步替换 UWP 部分为 WinUI 3</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#winui-3-wpf"><strong>方案二：重构为 WinUI 3 + WPF 混合应用</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>3. 关键技术点</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#api"><strong>API 兼容性</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mvvm"><strong>数据绑定与 MVVM</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>第三方库迁移</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>4. 常见问题与解决</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xaml"><strong>问题 1：XAML 命名空间冲突</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>问题 2：异步操作线程切换</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>问题 3：样式和主题适配</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>5. 迁移后的优化</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><strong>总结</strong></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
