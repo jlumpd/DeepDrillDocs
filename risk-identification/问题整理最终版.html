@@ -1,0 +1,846 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>关键模块分布统计 &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '问题整理最终版';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="%E4%BA%95%E4%B8%8B%E9%A3%8E%E9%99%A9%E6%99%BA%E8%83%BD%E8%AF%8A%E6%96%AD%E6%A8%A1%E5%9D%97.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="%E4%BA%95%E4%B8%8B%E9%A3%8E%E9%99%A9%E6%99%BA%E8%83%BD%E8%AF%8A%E6%96%AD%E6%A8%A1%E5%9D%97.html">
+                    井下风险智能诊断模块
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0.html">项目概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E5%8F%AF%E8%A7%86%E5%8C%96%E6%A8%A1%E5%9D%97.html">可视化模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E6%A3%80%E6%9F%A5%E8%A1%A8.html">检查表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E9%97%AE%E9%A2%98%E4%B8%80%E8%A7%88.html">问题一览</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F问题整理最终版.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/问题整理最终版.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>关键模块分布统计</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">关键模块分布统计</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">突出问题趋势</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>以下是对问题的归类整理表格：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>问题编号</p></th>
+<th class="head"><p>问题描述</p></th>
+<th class="head"><p>所属模块</p></th>
+<th class="head"><p>状态</p></th>
+<th class="head"><p>解决方案概要</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>界面与文档优化</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>1-3</p></td>
+<td><p>PPT日期、字体、截图问题</p></td>
+<td><p>演示文档</p></td>
+<td><p>完成</p></td>
+<td><p>修改PPT格式，删除冗余图片</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>压力术语修改（Constant/Variant→钻杆类型）</p></td>
+<td><p>压力计算</p></td>
+<td><p>完成</p></td>
+<td><p>PPT和软件术语同步更新</p></td>
+</tr>
+<tr class="row-odd"><td><p>5,12</p></td>
+<td><p>“上传”改为”导入”</p></td>
+<td><p>交互文案</p></td>
+<td><p>完成</p></td>
+<td><p>全局替换文案</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>“环空”错字修正</p></td>
+<td><p>文档校对</p></td>
+<td><p>完成</p></td>
+<td><p>文本修正</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>文字过多需简化</p></td>
+<td><p>内容优化</p></td>
+<td><p>完成</p></td>
+<td><p>精简文本内容</p></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p>压耗梯度对比图改为表格+实验数据</p></td>
+<td><p>数据可视化</p></td>
+<td><p>完成</p></td>
+<td><p>图表类型调整</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>单位与输入规范</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>23</p></td>
+<td><p>压力单位Pa→MPa</p></td>
+<td><p>全局单位统一</p></td>
+<td><p>完成</p></td>
+<td><p>保持内部计算单位一致性</p></td>
+</tr>
+<tr class="row-odd"><td><p>24</p></td>
+<td><p>体积流量单位改为L/s</p></td>
+<td><p>输入规范</p></td>
+<td><p>完成</p></td>
+<td><p>单位转换逻辑调整</p></td>
+</tr>
+<tr class="row-even"><td><p>22</p></td>
+<td><p>“测试温度/压力”改为”大气温度/气压”</p></td>
+<td><p>输入标签</p></td>
+<td><p>完成</p></td>
+<td><p>标签语义优化</p></td>
+</tr>
+<tr class="row-odd"><td><p>25</p></td>
+<td><p>油水比输入说明不清晰</p></td>
+<td><p>输入提示</p></td>
+<td><p>完成</p></td>
+<td><p>补充说明文案</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>数据导入导出与处理</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>5,12</p></td>
+<td><p>增加数据回放/清空功能</p></td>
+<td><p>数据管理</p></td>
+<td><p>完成</p></td>
+<td><p>添加数据操作按钮</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>高温高压数据导入逻辑优化</p></td>
+<td><p>数据预处理</p></td>
+<td><p>完成</p></td>
+<td><p>优化文件解析流程</p></td>
+</tr>
+<tr class="row-odd"><td><p>5,14</p></td>
+<td><p>六速数据导入绘图功能</p></td>
+<td><p>数据可视化</p></td>
+<td><p>未开始</p></td>
+<td><p>开发数据绘图模块</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>系统闪退测试（流体参数计算等）</p></td>
+<td><p>系统稳定性</p></td>
+<td><p>完成</p></td>
+<td><p>压力测试与异常捕获</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>核心功能模块改进</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><em>压力计算</em></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>精度问题（代码+PPT）</p></td>
+<td><p>计算逻辑</p></td>
+<td><p>软件确认</p></td>
+<td><p>调整浮点运算精度</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>压力负值异常</p></td>
+<td><p>数据校验</p></td>
+<td><p>软件确认</p></td>
+<td><p>数据范围限制或流变模型对比</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p>波动压力需包含静液柱对比</p></td>
+<td><p>算法扩展</p></td>
+<td><p>软件确认</p></td>
+<td><p>增加压力叠加计算</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>轮播图流量过小问题</p></td>
+<td><p>逻辑验证</p></td>
+<td><p>软件确认</p></td>
+<td><p>检查源代码流量阈值</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>温度计算</em></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>29</p></td>
+<td><p>组合钻具场景支持</p></td>
+<td><p>算法扩展</p></td>
+<td><p>完成</p></td>
+<td><p>更新温度场模型</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>温度场显示Bug修复</p></td>
+<td><p>数据可视化</p></td>
+<td><p>完成</p></td>
+<td><p>排查异常数据点</p></td>
+</tr>
+<tr class="row-even"><td><p><em>摩阻扭矩</em></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>17</p></td>
+<td><p>实测值图表改为散点图</p></td>
+<td><p>数据可视化</p></td>
+<td><p>未开始</p></td>
+<td><p>混合图表开发</p></td>
+</tr>
+<tr class="row-even"><td><p>18-19</p></td>
+<td><p>反演逻辑梳理与结果输出</p></td>
+<td><p>算法优化</p></td>
+<td><p>完成</p></td>
+<td><p>增加结果输出框</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>井眼清洁</em></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>岩屑参数移至侧边栏</p></td>
+<td><p>输入优化</p></td>
+<td><p>完成</p></td>
+<td><p>UI布局调整</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>赫巴流体屈服值关联</p></td>
+<td><p>计算逻辑</p></td>
+<td><p>进行中</p></td>
+<td><p>流变模型参数联动</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>算法与计算逻辑</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>精度问题（代码+PPT）</p></td>
+<td><p>浮点运算</p></td>
+<td><p>软件确认</p></td>
+<td><p>调整计算精度</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>负压异常对比流变模式</p></td>
+<td><p>模型验证</p></td>
+<td><p>软件确认</p></td>
+<td><p>多模型结果对比</p></td>
+</tr>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p>轮播图流量逻辑验证</p></td>
+<td><p>逻辑校验</p></td>
+<td><p>软件确认</p></td>
+<td><p>检查流量计算阈值</p></td>
+</tr>
+<tr class="row-even"><td><p>18</p></td>
+<td><p>摩阻扭矩反演逻辑优化</p></td>
+<td><p>算法重构</p></td>
+<td><p>完成</p></td>
+<td><p>数学建模与参数优化</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>UI/UX优化</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p>密度输入冗余问题</p></td>
+<td><p>输入联动</p></td>
+<td><p>完成</p></td>
+<td><p>字段关联逻辑开发</p></td>
+</tr>
+<tr class="row-odd"><td><p>20</p></td>
+<td><p>流型显示固定</p></td>
+<td><p>可视化一致性</p></td>
+<td><p>完成</p></td>
+<td><p>强制显示层流/过渡流/湍流</p></td>
+</tr>
+<tr class="row-even"><td><p>21</p></td>
+<td><p>菜单命名优化（”绘图参数”→”计算参数”）</p></td>
+<td><p>交互文案</p></td>
+<td><p>完成</p></td>
+<td><p>术语标准化</p></td>
+</tr>
+<tr class="row-odd"><td><p>27</p></td>
+<td><p>结果UI布局优化</p></td>
+<td><p>界面布局</p></td>
+<td><p>完成</p></td>
+<td><p>调整组件尺寸与文字大小</p></td>
+</tr>
+<tr class="row-even"><td><p>31</p></td>
+<td><p>折线图精度显示优化</p></td>
+<td><p>数据可视化</p></td>
+<td><p>完成</p></td>
+<td><p>控制小数位数</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>测试与系统优化</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>分辨率自适应</p></td>
+<td><p>兼容性</p></td>
+<td><p>完成</p></td>
+<td><p>响应式布局开发</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>输入缺失提示功能</p></td>
+<td><p>输入验证</p></td>
+<td><p>完成</p></td>
+<td><p>添加必填校验</p></td>
+</tr>
+<tr class="row-even"><td><p>30</p></td>
+<td><p>删除首页冗余模块</p></td>
+<td><p>系统瘦身</p></td>
+<td><p>完成</p></td>
+<td><p>移除无用功能组件</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>风险诊断模块</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>10-12</p></td>
+<td><p>溢流/卡钻/漏失类型诊断</p></td>
+<td><p>诊断逻辑</p></td>
+<td><p>完成</p></td>
+<td><p>集成物理模型与数据验证</p></td>
+</tr>
+<tr class="row-odd"><td><p>32</p></td>
+<td><p>工况识别曲线突出提示</p></td>
+<td><p>可视化增强</p></td>
+<td><p>完成</p></td>
+<td><p>高亮标记关键曲线</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>静态/动态条件区分</p></td>
+<td><p>逻辑扩展</p></td>
+<td><p>完成</p></td>
+<td><p>接入实时录井数据</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>参考成熟软件逻辑优化</p></td>
+<td><p>算法对标</p></td>
+<td><p>中优先级</p></td>
+<td><p>对比WellPlan等软件</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="id1">
+<h1>关键模块分布统计<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p><strong>界面与文档优化</strong>：12项（占15%）</p></li>
+<li><p><strong>核心功能模块</strong>：28项（占35%，含压力/温度/摩阻扭矩/井眼清洁）</p></li>
+<li><p><strong>算法与逻辑</strong>：9项（11%）</p></li>
+<li><p><strong>系统交互优化</strong>：21项（26%）</p></li>
+<li><p><strong>风险诊断专项</strong>：7项（9%）</p></li>
+</ol>
+</section>
+<section id="id2">
+<h1>突出问题趋势<a class="headerlink" href="#id2" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p><strong>可视化一致性</strong>：12项问题涉及图表/单位/显示格式标准化</p></li>
+<li><p><strong>输入验证</strong>：7项问题需强化数据校验与提示</p></li>
+<li><p><strong>算法健壮性</strong>：5项压力计算相关异常需模型优化</p></li>
+<li><p><strong>系统集成</strong>：3项需对接外部数据（录井/控压软件）</p></li>
+</ol>
+<p>此分类便于聚焦开发重点，建议优先处理”软件确认”状态的核心算法问题（#7-9,13）及高风险模块（压力计算/温度场模型），同步推进UI一致性优化。</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">关键模块分布统计</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">突出问题趋势</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
